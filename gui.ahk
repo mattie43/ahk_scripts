@@ -23,6 +23,7 @@ Constructor() {
 
   forceClose()
   dropInv()
+  prayFlick()
 	
 	return myGui
 }

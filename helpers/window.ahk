@@ -152,6 +152,7 @@ setInvSlotsCoords() {
 setup() {
   setRunelite()
   activateRunelite()
+  Sleep(500)
   sections := ["game", "inventory", "chat", "tick_counter"]
   for ind, section in sections {
     setWindowSection(section)
