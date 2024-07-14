@@ -26,9 +26,3 @@ callback() {
 
   tickCount += 1
 }
-
-x::{
-	listenToColorChange(callback)
-}
-
-z::Global stopLoop := True

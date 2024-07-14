@@ -1,13 +1,14 @@
 #Requires AutoHotkey v2.0
 
-global prevInput := ""
+addScript(name, onclick) {
+  global myGui, ih, prevInput, scriptCount
 
-forceClose() {
-  global myGui, ih, prevInput
+  y := (scriptCount * 35) + 40
+  scriptCount += 1
 
   ; Create button
-  button := myGui.Add("Button", "x56 y40 w80 h23", "Null")
-  myGui.Add("Text", "x144 y40 w80 h23 +0x200", "Force Close")
+  button := myGui.Add("Button", "x10 y" . y . " w55 h25", "Null")
+  myGui.Add("Text", "x70 y" . y+5, name)
   button.OnEvent("Click", clickHandler)
 
   ; Click handler
@@ -28,7 +29,7 @@ forceClose() {
       Hotkey(prevInput, "Off")
     }
     prevInput := input
-    Hotkey(input, (*) => ExitApp())
+    Hotkey(input, (*) => onclick())
   }
 
   reset() {

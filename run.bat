@@ -1,4 +1,4 @@
 @echo off
 git pull
-START AutoHotKey ".\gui.ahk"
+START AutoHotKey ".\controls\gui.ahk"
 exit

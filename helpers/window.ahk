@@ -1,10 +1,10 @@
 #Requires AutoHotkey v2.0
 
 ; Game images
-game_img := "*TransBlack .\imgs\game.png"
-inventory_img := "*TransBlack .\imgs\inventory.png"
-chat_img := "*TransBlack .\imgs\chat.png"
-tick_counter_img := ".\imgs\tick_counter.png"
+game_img := "*TransBlack ..\imgs\game.png"
+inventory_img := "*TransBlack ..\imgs\inventory.png"
+chat_img := "*TransBlack ..\imgs\chat.png"
+tick_counter_img := "..\imgs\tick_counter.png"
 
 ; Window setters
 window := {}

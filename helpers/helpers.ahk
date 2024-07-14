@@ -1,4 +1,7 @@
 ﻿#Include ".\index.ahk"
+#MaxThreadsPerHotkey 2
+
+global isLooping := False
 
 getColorCenter(topLeft, bottomRight, color) {
 	topLeftX := -1
@@ -71,18 +74,22 @@ getTickColor() {
 }
 
 listenToColorChange(callback) {
-	Global stopLoop := False
+	global isLooping
 	startColor := getTickColor()
+
+  if (isLooping) {
+    return isLooping := False
+  } else {
+    isLooping := True
+  }
 	
 	Loop
 	{
-		if (stopLoop)
-		{
+		if (!isLooping) {
 			break
 		}
 		currColor := getTickColor()
-		if (startColor != currColor)
-		{
+		if (startColor != currColor) {
 			startColor := currColor
 			callback()
 		}
@@ -111,8 +118,14 @@ hasVal(arr, item) {
   return 0
 }
 
+clickInventory(num) {
+  x := window.inventory.slots[num].x
+  y := window.inventory.slots[num].y
+  Click(x, y)
+}
+
 /*
 #HotIf WinActive("YourWindowTitle")
-~Esc::stopLoop := true
+~Esc::x := y
 #HotIf
 */
