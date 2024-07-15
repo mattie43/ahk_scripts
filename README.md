@@ -5,7 +5,7 @@ These scripts require AHK v2.
 You need to create a PATH in your env variables for "AutoHotKey".
 
 1. Open settings and search for "system variables".
-2. "Environment Variables..." button.
+2. Click "Environment Variables..." button.
 3. Double click "Path" from System variables section.
 4. Select "New" and paste your FOLDER where "AutoHotkey.exe" is located.
 

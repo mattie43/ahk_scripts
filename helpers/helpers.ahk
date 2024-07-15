@@ -40,33 +40,71 @@ selectTab(tab) {
   Click()
 }
 
-findColorIn(color, type) {
-	chosenType := {}
+findColorIn(color, section) {
+	chosenSection := {}
 	
-	if type == "game"
+	if section == "game"
 	{
-		chosenType := window.game
+		chosenSection := window.game
 	}
-	else if type == "chat"
+	else if section == "chat"
 	{
-		chosenType := window.chat
+		chosenSection := window.chat
 	}
 	else
 	{
-		chosenType := window.inventory
+		chosenSection := window.inventory
 	}
 	
 	topLeft := {
-		x: chosenType.x,
-		y: chosenType.y
+		x: chosenSection.x,
+		y: chosenSection.y
 	}
 	bottomRight := {
-		x: chosenType.x + chosenType.width,
-		y: chosenType.y + chosenType.height
+		x: chosenSection.x + chosenSection.width,
+		y: chosenSection.y + chosenSection.height
 	}
 	
 	coords := getColorCenter(topLeft, bottomRight, color)
 	return coords
+}
+
+clickColorIn(color, section, rand := 0) {
+  coords := findColorIn(color, section)
+  singleClick(coords.x, coords.y, rand)
+}
+
+depositAll() {
+  singleClick(window.bank.deposit.x, window.bank.deposit.y, 7)
+}
+
+singleClick(x := -1, y:= -1, rand := 0) {
+  if (rand > 0) {
+    rand := Random(rand * -1, rand)
+  }
+  if (x AND y) {
+    MouseMove(x + rand, y + rand)
+  }
+  randSleep(90, 130)
+  Click()
+}
+
+doubleClick(x := -1, y:= -1, rand := 0) {
+  if (rand > 0) {
+    rand := Random(rand * -1, rand)
+  }
+  if (x AND y) {
+    MouseMove(x + rand, y + rand)
+  }
+  randSleep(90, 130)
+  Click()
+  randSleep(90, 130)
+  Click()
+}
+
+randSleep(x, y) {
+  rand := Random(x, y)
+  Sleep(rand)
 }
 
 getTickColor() {
@@ -98,14 +136,14 @@ listenToColorChange(callback) {
 
 dropInventory(skip:=[]) {
   Send("{Shift down}")
-  Sleep(100)
+  randSleep(70, 100)
   for ind, inv in window.inventory.slots {
     if hasVal(skip, ind) {
       continue
     }
     rand := Random(-5, 5)
     Click(inv.x + rand, inv.y + rand)
-    Sleep(Random(50, 100))
+    randSleep(100, 130)
   }
   Send("{Shift up}")
 }

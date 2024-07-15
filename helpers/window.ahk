@@ -15,6 +15,16 @@ window.game := {
 	x: -1,
 	y: -1,
 }
+window.bank := {
+  deposit: {
+    x: -1,
+    y: -1
+  },
+  close: {
+    x: -1,
+    y: -1
+  },
+}
 window.inventory := {
 	src: inventory_img,
 	height: 261,
@@ -96,7 +106,7 @@ activateRunelite() {
   WinActivate(window.title)
 }
 
-setWindowSection(section) {	
+setWindowSection(section) {
 	x := -1
 	y := -1
 	
@@ -149,6 +159,16 @@ setInvSlotsCoords() {
   }
 }
 
+setBankCoords() {
+	startingX := window.game.x
+	startingY := window.game.y
+
+  window.bank.deposit.x := startingX + 440
+  window.bank.deposit.y := startingY + 307
+  window.bank.close.x := startingX + 483
+  window.bank.close.y := startingY + 19
+}
+
 setup() {
   setRunelite()
   activateRunelite()
@@ -159,4 +179,5 @@ setup() {
   }
   setTabsCoords()
   setInvSlotsCoords()
+  setBankCoords()
 }
