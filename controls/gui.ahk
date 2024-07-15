@@ -27,7 +27,7 @@ Constructor() {
   addScript("Force Close", ExitApp)
   addScript("Get Color at Mouse", getColorAtMouse)
   addScript("Pray Flick", prayFlick)
-  addScript("1 Tick Karambwans {UNFINISHED}", karamCooking)
+  addScript("Slow Karams", karamCooking)
 	
 	return myGui
 }
