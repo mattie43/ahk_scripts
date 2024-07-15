@@ -7,5 +7,6 @@ prayFlick() {
     Sleep(rand)
     Click()
   }
+  
   listenToColorChange(prayFlickCallback)
 }

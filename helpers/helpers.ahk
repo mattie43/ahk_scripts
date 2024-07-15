@@ -121,7 +121,8 @@ hasVal(arr, item) {
 clickInventory(num) {
   x := window.inventory.slots[num].x
   y := window.inventory.slots[num].y
-  Click(x, y)
+  rand := Random(-5, 5)
+  Click(x + rand, y + rand)
 }
 
 /*

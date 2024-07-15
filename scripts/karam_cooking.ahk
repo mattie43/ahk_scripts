@@ -1,10 +1,25 @@
 #Requires AutoHotkey v2.0
 
-#Include "..\helpers\index.ahk"
+global tickCount := 0
 
 karamCooking() {
-  clickInventory(28)
-  Sleep(100)
-  coords := findColorIn(colors.pink, "game")
-  Click(coords.x, coords.y)
+  callback() {
+    global tickCount
+
+    SendInput("{Space}")
+    clickInventory(28)
+    Sleep(100)
+    SendInput("{Space}")
+    coords := findColorIn(colors.pink, "game")
+    rand := Random(-10, 10)
+    MouseMove(coords.x + rand, coords.y + rand)
+    Sleep(50)
+    SendInput("{Space}")
+    Click()
+    SendInput("{Space}")
+
+    tickCount += 1 
+  }
+  
+  listenToColorChange(callback)
 }

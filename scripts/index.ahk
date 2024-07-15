@@ -5,5 +5,6 @@
 #Include ".\get_color_at_mouse.ahk"
 #Include ".\alch_camelot.ahk"
 #Include ".\pray_flick.ahk"
+#Include ".\karam_cooking.ahk"
 
 setup()
