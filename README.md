@@ -20,4 +20,4 @@ You need to create a PATH in your env variables for "AutoHotKey".
 Typical path for AHK: "C:\Program Files\AutoHotkey\v2".
 
 ## To run by itself
-Just run gui.ahk inside controls folder.
+Just run `gui.ahk` inside controls folder.
