@@ -3,7 +3,7 @@
 addScript(name, onclick) {
   global myGui, ih, prevInput, scriptCount
 
-  y := (scriptCount * 35) + 40
+  y := (scriptCount * 35) + 60
   scriptCount += 1
 
   ; Create button

@@ -21,6 +21,8 @@ Constructor() {
 
   ; Header + Seperator
 	myGui.Add("Text", "x23", "Set a hotkey for each script you want to use")
+	myGui.Add("Text", "x30 cRed", "Note:")
+	myGui.Add("Text", "yp x59", "Don't forget to import runelite profile")
 	myGui.Add("Text", "w240 x10 y+10 +0x10")
 
   ; Scripts
@@ -28,7 +30,7 @@ Constructor() {
   addScript("Get Color at Mouse", getColorAtMouse)
   addScript("Pray Flick", prayFlick)
   addScript("Slow Karams", karamCooking)
-  addScript("Agility", agility)
+  addScript("Agility v1", agility)
 	
 	return myGui
 }
