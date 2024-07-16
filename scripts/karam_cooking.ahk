@@ -34,11 +34,14 @@ karamCooking() {
       Send("{Space}")
     }
     if (tickCount > 112) {
-      return tickCount := 0
+      rand := Random(1,8)
+      if (rand == 1) {
+        return tickCount := 0
+      }
     }
 
     tickCount += 1 
   }
-  
-  listenToColorChange(callback)
+
+  ; listenToColorChange(callback)
 }

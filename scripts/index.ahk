@@ -6,5 +6,6 @@
 #Include ".\alch_camelot.ahk"
 #Include ".\pray_flick.ahk"
 #Include ".\karam_cooking.ahk"
+#Include ".\agility.ahk"
 
 setup()

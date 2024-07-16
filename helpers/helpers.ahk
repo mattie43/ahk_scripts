@@ -10,22 +10,22 @@ getColorCenter(topLeft, bottomRight, color) {
 	bottomRightY := -1
 	
 	; Search top left to bottom right
-	if !PixelSearch(&topLeftX, &topLeftY, topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, color, 0)
-	{
-		MsgBox "Could not find pixel: " . color
-		ExitApp
+	if !PixelSearch(&topLeftX, &topLeftY, topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, color, 0) {
+    return { x: -1, y:-1 }
+		; MsgBox "Could not find pixel: " . color
+		; ExitApp
 	}
 	
 	; Search bottom right to top left
-	if !PixelSearch(&bottomRightX, &bottomRightY, bottomRight.x, bottomRight.y, topLeft.x, topLeft.y, color, 0)
-	{
-		MsgBox "Could not find pixel: " . color
-		ExitApp
+	if !PixelSearch(&bottomRightX, &bottomRightY, bottomRight.x, bottomRight.y, topLeft.x, topLeft.y, color, 0) {
+    return { x: -1, y:-1 }
+		; MsgBox "Could not find pixel: " . color
+		; ExitApp
 	}
 	
 	
-	centerX := (topLeftX + bottomRightX) / 2
-	centerY := (topLeftY + bottomRightY) / 2
+	centerX := Floor((topLeftX + bottomRightX) / 2)
+	centerY := Floor((topLeftY + bottomRightY) / 2)
 	
 	coords := {}
 	coords.x := centerX
@@ -79,6 +79,9 @@ depositAll() {
 }
 
 singleClick(x := -1, y:= -1, rand := 0) {
+  if (x < 1 OR y < 1) {
+    return
+  }
   if (rand > 0) {
     rand := Random(rand * -1, rand)
   }
@@ -90,6 +93,9 @@ singleClick(x := -1, y:= -1, rand := 0) {
 }
 
 doubleClick(x := -1, y:= -1, rand := 0) {
+  if (x < 1 OR y < 1) {
+    return
+  }
   if (rand > 0) {
     rand := Random(rand * -1, rand)
   }
@@ -161,6 +167,24 @@ clickInventory(num) {
   y := window.inventory.slots[num].y
   rand := Random(-5, 5)
   Click(x + rand, y + rand)
+}
+
+playerInTile(color) {
+  playerX := window.player.x
+  playerY := window.player.y
+  
+  playerColor := PixelGetColor(playerX, playerY)
+
+  if (playerColor == color) {
+    return True
+  }
+  return False
+}
+
+debug(arr := []) {
+  for ind, item in arr {
+    OutputDebug(ind . ": " . item)
+  }
 }
 
 /*

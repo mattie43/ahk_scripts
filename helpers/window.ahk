@@ -15,6 +15,10 @@ window.game := {
 	x: -1,
 	y: -1,
 }
+window.player := {
+  x: -1,
+  y: -1
+}
 window.bank := {
   deposit: {
     x: -1,
@@ -169,6 +173,14 @@ setBankCoords() {
   window.bank.close.y := startingY + 19
 }
 
+setPlayerCoords() {
+	startingX := window.game.x
+	startingY := window.game.y
+
+  window.player.x := startingX + 257
+  window.player.y := startingY + 168
+}
+
 setup() {
   setRunelite()
   activateRunelite()
@@ -180,4 +192,5 @@ setup() {
   setTabsCoords()
   setInvSlotsCoords()
   setBankCoords()
+  setPlayerCoords()
 }

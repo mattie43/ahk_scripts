@@ -28,6 +28,7 @@ Constructor() {
   addScript("Get Color at Mouse", getColorAtMouse)
   addScript("Pray Flick", prayFlick)
   addScript("Slow Karams", karamCooking)
+  addScript("Agility", agility)
 	
 	return myGui
 }
