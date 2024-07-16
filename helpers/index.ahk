@@ -3,3 +3,4 @@
 #Include ".\window.ahk"
 #Include ".\colors.ahk"
 #Include ".\helpers.ahk"
+#Include ".\debug.ahk"

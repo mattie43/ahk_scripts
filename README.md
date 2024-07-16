@@ -3,7 +3,7 @@
 ## Info
 These scripts require AHK v2.  
 Make sure to import the runelite-profile to get the needed settings/colors.  
-To get updates through the batch, you need have git installed.
+To get updates through the batch, you need to have git installed.
 
 ## Downloads
 AHK v2 download: https://www.autohotkey.com/v2/  

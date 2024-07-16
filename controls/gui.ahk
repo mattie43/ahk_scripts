@@ -1,6 +1,7 @@
 ﻿#Requires AutoHotkey v2.0
 
 #Include ".\add_script.ahk"
+#Include ".\debug_box.ahk"
 #Include "..\scripts\index.ahk"
 
 global myGui, ih := InputHook("L1"), scriptCount := 0
@@ -31,6 +32,8 @@ Constructor() {
   addScript("Pray Flick", prayFlick)
   addScript("Slow Karams", karamCooking)
   addScript("Agility v1", agility)
+
+  debugBox()
 	
 	return myGui
 }

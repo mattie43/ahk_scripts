@@ -2,5 +2,5 @@
 
 getColorAtMouse() {
     MouseGetPos &MouseX, &MouseY
-    MsgBox "The color at " . MouseX . ", " . MouseY . " is: " . PixelGetColor(MouseX, MouseY)
+    debug("Color: " . PixelGetColor(MouseX, MouseY) . " @(" . MouseX . ", " . MouseY . ")" )
 }

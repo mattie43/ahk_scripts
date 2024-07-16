@@ -181,12 +181,6 @@ playerInTile(color) {
   return False
 }
 
-debug(arr := []) {
-  for ind, item in arr {
-    OutputDebug(ind . ": " . item)
-  }
-}
-
 /*
 #HotIf WinActive("YourWindowTitle")
 ~Esc::x := y
