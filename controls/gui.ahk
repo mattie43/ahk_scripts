@@ -32,6 +32,7 @@ Constructor() {
   addScript("Pray Flick", prayFlick)
   addScript("Slow Karams", karamCooking)
   addScript("Agility v1", agility)
+  addScript("One Tick Click + Spacebar", oneTickClick)
 
   debugBox()
 	

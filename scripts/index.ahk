@@ -7,5 +7,6 @@
 #Include ".\pray_flick.ahk"
 #Include ".\karam_cooking.ahk"
 #Include ".\agility.ahk"
+#Include ".\one_tick_click.ahk"
 
 setup()
