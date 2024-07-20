@@ -165,8 +165,7 @@ hasVal(arr, item) {
 clickInventory(num) {
   x := window.inventory.slots[num].x
   y := window.inventory.slots[num].y
-  rand := Random(-5, 5)
-  Click(x + rand, y + rand)
+  singleClick(x, y, 5)
 }
 
 playerInTile(color) {

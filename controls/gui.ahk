@@ -4,7 +4,7 @@
 #Include ".\debug_box.ahk"
 #Include "..\scripts\index.ahk"
 
-global myGui, ih := InputHook("L1"), scriptCount := 0
+global myGui, ih := InputHook("L1"), scriptCount := 0, prevInput := ""
 
 if A_LineFile = A_ScriptFullPath && !A_IsCompiled {
 	myGui := Constructor()
@@ -33,6 +33,9 @@ Constructor() {
   addScript("Slow Karams", karamCooking)
   addScript("Agility v1", agility)
   addScript("One Tick Click + Spacebar", oneTickClick)
+  addScript("Six Plank Construction", sixPlankCon)
+  addScript("Fletch Darts", fletchDarts)
+  addScript("Drop Inv 3-28", dropInv)
 
   debugBox()
 	
