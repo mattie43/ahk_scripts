@@ -12,5 +12,6 @@
 #Include ".\fletch_darts.ahk"
 #Include ".\iron_power_mine.ahk"
 #Include ".\blackjack.ahk"
+#Include ".\nmz.ahk"
 
 setup()

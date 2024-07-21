@@ -35,10 +35,11 @@ Constructor() {
   addScript("One Tick Click + Spacebar", oneTickClick)
   addScript("Six Plank Construction", sixPlankCon)
   addScript("Fletch Darts", fletchDarts)
-  addScript("Drop Inv 3-28", dropInv)
+  addScript("Drop Inv", dropInv)
   addScript("Iron Power Mine", ironPowerMine)
   addScript("Blackjack", blackjack)
   addScript("Alch Camelot", alchCamelot)
+  addScript("NMZ", nmz)
 
   debugBox()
 	
