@@ -3,35 +3,39 @@
 
 global isLooping := False
 
-getColorCenter(topLeft, bottomRight, color) {
-	topLeftX := -1
-	topLeftY := -1
-	bottomRightX := -1
-	bottomRightY := -1
-	
+getColorTopLeft(topLeft, bottomRight, color) {
+  x := -1
+  y := -1
+
+  if not (PixelSearch(&x, &y, topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, color, 0)) {
+    return { x: -1, y: -1 }
+  }
+  
+  return { x: x, y: y }
+}
+
+getColorBottomRight(topLeft, bottomRight, color) {
+  x := -1
+  y := -1
+
+	if not (PixelSearch(&x, &y, bottomRight.x, bottomRight.y, topLeft.x, topLeft.y, color, 0)) {
+    return { x: -1, y: -1 }
+  }
+
+  return { x: x, y: y }
+}
+
+getColorCenter(topLeft, bottomRight, color) {	
 	; Search top left to bottom right
-	if !PixelSearch(&topLeftX, &topLeftY, topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, color, 0) {
-    return { x: -1, y:-1 }
-		; MsgBox "Could not find pixel: " . color
-		; ExitApp
-	}
+	tl := getColorTopLeft(topLeft, bottomRight, color)
 	
 	; Search bottom right to top left
-	if !PixelSearch(&bottomRightX, &bottomRightY, bottomRight.x, bottomRight.y, topLeft.x, topLeft.y, color, 0) {
-    return { x: -1, y:-1 }
-		; MsgBox "Could not find pixel: " . color
-		; ExitApp
-	}
+	br := getColorBottomRight(topLeft, bottomRight, color)
 	
-	
-	centerX := Floor((topLeftX + bottomRightX) / 2)
-	centerY := Floor((topLeftY + bottomRightY) / 2)
-	
-	coords := {}
-	coords.x := centerX
-	coords.y := centerY
-	
-	return coords
+  return {
+    x: Floor((tl.x + br.x) / 2),
+    y: Floor((tl.y + br.y) / 2)
+  }
 }
 
 selectTab(tab) {
@@ -71,6 +75,7 @@ findColorIn(color, section) {
 
 clickColorIn(color, section, rand := 0) {
   coords := findColorIn(color, section)
+  debug("coords" . coords.x . ", " . coords.y)
   singleClick(coords.x, coords.y, rand)
 }
 

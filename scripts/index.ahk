@@ -10,5 +10,7 @@
 #Include ".\one_tick_click.ahk"
 #Include ".\six_plank_con.ahk"
 #Include ".\fletch_darts.ahk"
+#Include ".\iron_power_mine.ahk"
+#Include ".\blackjack.ahk"
 
 setup()

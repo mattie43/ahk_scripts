@@ -36,6 +36,9 @@ Constructor() {
   addScript("Six Plank Construction", sixPlankCon)
   addScript("Fletch Darts", fletchDarts)
   addScript("Drop Inv 3-28", dropInv)
+  addScript("Iron Power Mine", ironPowerMine)
+  addScript("Blackjack", blackjack)
+  addScript("Alch Camelot", alchCamelot)
 
   debugBox()
 	
