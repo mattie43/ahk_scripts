@@ -5,7 +5,7 @@ blackjack() {
   callback() {
     if (tickCount == 1) {
       Click("Right")
-      randSleep(100,130)
+      randSleep(200,230)
       Click()
     }
     if (tickCount == 2) {

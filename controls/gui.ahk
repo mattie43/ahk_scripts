@@ -40,6 +40,7 @@ Constructor() {
   addScript("Blackjack", blackjack)
   addScript("Alch Camelot", alchCamelot)
   addScript("NMZ", nmz)
+  addScript("Stall Thieving", stallThieving)
 
   debugBox()
 	

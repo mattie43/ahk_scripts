@@ -73,6 +73,38 @@ findColorIn(color, section) {
 	return coords
 }
 
+findImageIn(image, section) {
+	chosenSection := {}
+	
+	if section == "game"
+	{
+		chosenSection := window.game
+	}
+	else if section == "chat"
+	{
+		chosenSection := window.chat
+	}
+	else
+	{
+		chosenSection := window.inventory
+	}
+	
+	tl := {
+		x: chosenSection.x,
+		y: chosenSection.y
+	}
+	br := {
+		x: chosenSection.x + chosenSection.width,
+		y: chosenSection.y + chosenSection.height
+	}
+	
+	if (ImageSearch(&x, &y, tl.x, tl.y, br.x, br.y, image)) {
+    return { x: x, y: y}
+  } else {
+    return { x: -1, y: -1}
+  }
+}
+
 clickColorIn(color, section, rand := 0) {
   coords := findColorIn(color, section)
   debug("coords" . coords.x . ", " . coords.y)

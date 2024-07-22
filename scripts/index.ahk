@@ -13,5 +13,6 @@
 #Include ".\iron_power_mine.ahk"
 #Include ".\blackjack.ahk"
 #Include ".\nmz.ahk"
+#Include ".\stall_thieving.ahk"
 
 setup()
