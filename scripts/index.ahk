@@ -8,7 +8,7 @@
 #Include ".\karam_cooking.ahk"
 #Include ".\agility.ahk"
 #Include ".\one_tick_click.ahk"
-#Include ".\six_plank_con.ahk"
+#Include ".\mahog_tables.ahk"
 #Include ".\fletch_darts.ahk"
 #Include ".\iron_power_mine.ahk"
 #Include ".\blackjack.ahk"

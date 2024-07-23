@@ -33,7 +33,7 @@ Constructor() {
   addScript("Slow Karams", karamCooking)
   addScript("Agility v1", agility)
   addScript("One Tick Click + Spacebar", oneTickClick)
-  addScript("Six Plank Construction", sixPlankCon)
+  addScript("Mahogany Tables", mahogTables)
   addScript("Fletch Darts", fletchDarts)
   addScript("Drop Inv", dropInv)
   addScript("Iron Power Mine", ironPowerMine)

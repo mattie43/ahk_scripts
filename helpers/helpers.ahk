@@ -107,8 +107,36 @@ findImageIn(image, section) {
 
 clickColorIn(color, section, rand := 0) {
   coords := findColorIn(color, section)
-  debug("coords" . coords.x . ", " . coords.y)
   singleClick(coords.x, coords.y, rand)
+}
+
+clickRandomColorIn(color, section) {
+	chosenSection := {}
+	
+	if section == "game" {
+		chosenSection := window.game
+	} else if section == "chat" {
+		chosenSection := window.chat
+	}	else {
+		chosenSection := window.inventory
+	}
+	
+	topLeft := {
+		x: chosenSection.x,
+		y: chosenSection.y
+	}
+	bottomRight := {
+		x: chosenSection.x + chosenSection.width,
+		y: chosenSection.y + chosenSection.height
+	}
+  
+  tl := getColorTopLeft(topLeft, bottomRight, color)
+  br := getColorBottomRight(topLeft, bottomRight, color)
+
+  randX := Random(tl.x + 1, br.x - 1)
+  randY := Random(tl.y + 1, br.y - 1)
+
+  singleClick(randX, randY)
 }
 
 depositAll() {

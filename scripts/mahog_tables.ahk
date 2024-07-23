@@ -6,7 +6,7 @@ demonButlerRetrieveImg := "..\imgs\demon_butler_retrieve.png"
 
 global tickCount := 0
 
-sixPlankCon() {
+mahogTables() {
   callback() {
     global tickCount
 
@@ -19,7 +19,7 @@ sixPlankCon() {
     butlerTick := 25
 
     if (hasVal(tableClickTicks, tickCount)) {
-      clickColorIn(colors.pink, "game", 7)
+      clickColorIn(colors.pink, "game", 5)
     }
     if (hasVal(buildTicks, tickCount)) {
       Send("6")
@@ -28,7 +28,7 @@ sixPlankCon() {
       Send("1")
     }
     if (tickCount == butlerTick) {
-      clickColorIn(colors.off_cyan, "game", 10)
+      clickColorIn(colors.off_cyan, "game", 3)
     }
     if (tickCount == butlerTick + 1) {
       Send("1")
