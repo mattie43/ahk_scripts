@@ -1,5 +1,4 @@
-﻿#Include ".\index.ahk"
-#MaxThreadsPerHotkey 2
+﻿#MaxThreadsPerHotkey 2
 
 global isLooping := False
 
@@ -7,22 +6,23 @@ getColorTopLeft(topLeft, bottomRight, color) {
   x := -1
   y := -1
 
-  if not (PixelSearch(&x, &y, topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, color, 0)) {
+  if (PixelSearch(&x, &y, topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, color, 0)) {
+    return { x: x, y: y }
+  } else {
     return { x: -1, y: -1 }
   }
   
-  return { x: x, y: y }
 }
 
 getColorBottomRight(topLeft, bottomRight, color) {
   x := -1
   y := -1
 
-	if not (PixelSearch(&x, &y, bottomRight.x, bottomRight.y, topLeft.x, topLeft.y, color, 0)) {
+	if (PixelSearch(&x, &y, bottomRight.x, bottomRight.y, topLeft.x, topLeft.y, color, 0)) {
+    return { x: x, y: y }
+  } else {
     return { x: -1, y: -1 }
   }
-
-  return { x: x, y: y }
 }
 
 getColorCenter(topLeft, bottomRight, color) {	
@@ -39,24 +39,17 @@ getColorCenter(topLeft, bottomRight, color) {
 }
 
 selectTab(tab) {
-  rand := Random(-10, 10)
-	MouseMove(window.tabs.%tab%.x + rand, window.tabs.%tab%.y + rand)
-  Click()
+  singleClick(window.tabs.%tab%.x, window.tabs.%tab%.y, 10)
 }
 
 findColorIn(color, section) {
 	chosenSection := {}
 	
-	if section == "game"
-	{
+	if section == "game" {
 		chosenSection := window.game
-	}
-	else if section == "chat"
-	{
+	}	else if section == "chat"	{
 		chosenSection := window.chat
-	}
-	else
-	{
+	}	else {
 		chosenSection := window.inventory
 	}
 	
@@ -73,19 +66,14 @@ findColorIn(color, section) {
 	return coords
 }
 
-findImageIn(image, section) {
+findImageIn(&x, &y, image, section, width, height) {
 	chosenSection := {}
 	
-	if section == "game"
-	{
+	if section == "game" {
 		chosenSection := window.game
-	}
-	else if section == "chat"
-	{
+	}	else if section == "chat"	{
 		chosenSection := window.chat
-	}
-	else
-	{
+	}	else {
 		chosenSection := window.inventory
 	}
 	
@@ -98,11 +86,7 @@ findImageIn(image, section) {
 		y: chosenSection.y + chosenSection.height
 	}
 	
-	if (ImageSearch(&x, &y, tl.x, tl.y, br.x, br.y, image)) {
-    return { x: x, y: y}
-  } else {
-    return { x: -1, y: -1}
-  }
+	return ImageSearch(&x, &y, tl.x, tl.y, br.x, br.y, image)
 }
 
 clickColorIn(color, section, rand := 0) {
@@ -110,33 +94,10 @@ clickColorIn(color, section, rand := 0) {
   singleClick(coords.x, coords.y, rand)
 }
 
-clickRandomColorIn(color, section) {
-	chosenSection := {}
-	
-	if section == "game" {
-		chosenSection := window.game
-	} else if section == "chat" {
-		chosenSection := window.chat
-	}	else {
-		chosenSection := window.inventory
-	}
-	
-	topLeft := {
-		x: chosenSection.x,
-		y: chosenSection.y
-	}
-	bottomRight := {
-		x: chosenSection.x + chosenSection.width,
-		y: chosenSection.y + chosenSection.height
-	}
-  
-  tl := getColorTopLeft(topLeft, bottomRight, color)
-  br := getColorBottomRight(topLeft, bottomRight, color)
-
-  randX := Random(tl.x + 1, br.x - 1)
-  randY := Random(tl.y + 1, br.y - 1)
-
-  singleClick(randX, randY)
+clickImageIn(image, section, width, height, rand := 0) {
+  if findImageIn(&x, &y, image, section, width, height) {
+    singleClick(x, y, rand)
+  }
 }
 
 depositAll() {
@@ -220,10 +181,13 @@ dropInventory(skip:=[]) {
 }
 
 hasVal(arr, item) {
-  for index, val in arr
-    if (val == item) {
-      return index
+  if (arr AND item) {
+    for index, val in arr {
+      if (val == item) {
+        return index
+      }
     }
+  }
   return 0
 }
 

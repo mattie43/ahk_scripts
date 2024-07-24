@@ -1,42 +1,62 @@
 #Requires AutoHotkey v2.0
 
-absorption4Img := "*TransBlack ..\imgs\absorption_4.png"
-absorption3Img := "*TransBlack ..\imgs\absorption_3.png"
-absorption2Img := "*TransBlack ..\imgs\absorption_2.png"
-absorption1Img := "*TransBlack ..\imgs\absorption_1.png"
-
 nmz() {
-  if ImageSearch(&x, &y, window.inventory.x, window.inventory.y, window.inventory.x + window.inventory.width, window.inventory.y + window.inventory.height, absorption4Img) {
-    debug("image 4 found")
+  ; clickPot() {
+  ;   rand := Random(6,10)
+  ;   coords := findImageIn(pray1Img, "inventory")
+  ;   if (coords.x != -1 ) {
+  ;     MouseMove(coords.x + rand, coords.y + rand)
+  ;     randSleep(90,120)
+  ;     Click()
+  ;     return
+  ;   }
+  
+  ;   coords := findImageIn(pray2Img, "inventory")
+  ;   if (coords.x != -1 ) {
+  ;     MouseMove(coords.x + rand, coords.y + rand)
+  ;     randSleep(90,120)
+  ;     Click()
+  ;     return
+  ;   }
+  
+  ;   coords := findImageIn(pray3Img, "inventory")
+  ;   if (coords.x != -1 ) {
+  ;     MouseMove(coords.x + rand, coords.y + rand)
+  ;     randSleep(90,120)
+  ;     Click()
+  ;     return
+  ;   }
+
+  ;   coords := findImageIn(pray4Img, "inventory")
+  ;   if (coords.x != -1 ) {
+  ;     MouseMove(coords.x + rand, coords.y + rand)
+  ;     randSleep(90,120)
+  ;     Click()
+  ;     return
+  ;   }
+  ; }
+
+  ; callback() {
+  ;   if (ImageSearch(&x, &y, 0, 0, 900, 900, prayOrb12Img)) {
+  ;     clickPot()
+  ;     return Sleep(2000)
+  ;   }
+  ;   if (ImageSearch(&x, &y, 0, 0, 900, 900, prayOrb11Img)) {
+  ;     clickPot()
+  ;     return Sleep(2000)
+  ;   }
+  ;   if (ImageSearch(&x, &y, 0, 0, 900, 900, prayOrb10Img)) {
+  ;     clickPot()
+  ;     return Sleep(2000)
+  ;   }
+  ; }
+
+  ; listenToColorChange(callback)
+
+  if findImageIn(&x, &y, imgs.prayer_1, "inventory", 10, 10) {
+    debug("true")
     MouseMove(x, y)
   } else {
-    debug("image 4 NOT found")
-  }
-  Sleep(500)
-  MouseMove(10, 10)
-  Sleep(500)
-  if ImageSearch(&x, &y, window.inventory.x, window.inventory.y, window.inventory.x + window.inventory.width, window.inventory.y + window.inventory.height, absorption3Img) {
-    debug("image 3 found")
-    MouseMove(x, y)
-  } else {
-    debug("image 3 NOT found")
-  }
-  Sleep(500)
-  MouseMove(10, 10)
-  Sleep(500)
-  if ImageSearch(&x, &y, window.inventory.x, window.inventory.y, window.inventory.x + window.inventory.width, window.inventory.y + window.inventory.height, absorption2Img) {
-    debug("image 2 found")
-    MouseMove(x, y)
-  } else {
-    debug("image 2 NOT found")
-  }
-  Sleep(500)
-  MouseMove(10, 10)
-  Sleep(500)
-  if ImageSearch(&x, &y, window.inventory.x, window.inventory.y, window.inventory.x + window.inventory.width, window.inventory.y + window.inventory.height, absorption1Img) {
-    debug("image 1 found")
-    MouseMove(x, y)
-  } else {
-    debug("image 1 NOT found")
+    debug("false")
   }
 }

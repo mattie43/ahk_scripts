@@ -1,15 +1,9 @@
 #Requires AutoHotkey v2.0
 
-; Game images
-game_img := "*TransBlack ..\imgs\game.png"
-inventory_img := "*TransBlack ..\imgs\inventory.png"
-chat_img := "*TransBlack ..\imgs\chat.png"
-tick_counter_img := "..\imgs\tick_counter.png"
-
 ; Window setters
 window := {}
 window.game := {
-	src: game_img,
+	src: windowImgs.game,
 	height: 336,
 	width: 514,
 	x: -1,
@@ -30,7 +24,7 @@ window.bank := {
   },
 }
 window.inventory := {
-	src: inventory_img,
+	src: windowImgs.inventory,
 	height: 261,
 	width: 236,
 	x: -1,
@@ -38,14 +32,14 @@ window.inventory := {
   slots: []
 }
 window.chat := {
-	src: chat_img,
+	src: windowImgs.chat,
 	height: 141,
 	width: 518,
 	x: -1,
 	y: -1
 }
 window.tick_counter := {
-	src: tick_counter_img,
+	src: windowImgs.tick_counter,
 	height: 19,
 	width: 19,
 	x: -1,

@@ -1,43 +1,47 @@
 #Requires AutoHotkey v2.0
 
-addScript(name, onclick) {
-  global myGui, ih, prevInput, scriptCount
+addScript(name, onclick, scriptCount) {
+  global myGui, ih, currInputs
 
-  y := (scriptCount * 35) + 60
-  scriptCount += 1
+  y := (scriptCount * 30)
 
   ; Create button
-  button := myGui.Add("Button", "x10 y" . y . " w55 h25", "Null")
-  myGui.Add("Text", "x70 y" . y+5, name)
+  button := myGui.Add("Button", "w55 xs ys" . y, "None")
+  myGui.Add("Text", "xp+60 ys" . y+5, name)
   button.OnEvent("Click", clickHandler)
 
   ; Click handler
   clickHandler(*) {
+    prevInput := button.Text
     button.Text := "..."
     ih.Stop()
     ih.KeyOpt("{Space}{Tab}", "I")
     ih.Start()
     ih.Wait()
-    input := ih.Input
-    ; If Esc, reset input
+    input := StrUpper(ih.Input)
+    ; If Esc, reset text
     if (Ord(input) == 27) {
-      reset()
+      button.Text := "None"
+    } else if (hasVal(currInputs, input)) {
+      exists(prevInput, input)
     } else {
-      button.Text := StrUpper(input)
+      button.Text := input
+      Hotkey(input, (*) => onclick(), "On")
+      currInputs.Push(input)
     }
-    if (prevInput) {
-      Hotkey(prevInput, "Off")
-    }
-    prevInput := input
-    Hotkey(input, (*) => onclick())
+    checkReset(prevInput)
   }
 
-  reset() {
-    button.Text := "Null"
-    if (prevInput) {
+  checkReset(prevInput) {
+    ind := hasVal(currInputs, prevInput)
+    if ind {
       Hotkey(prevInput, "Off")
+      currInputs.RemoveAt(ind)
     }
-    prevInput := ""
-    return
+  }
+
+  exists(prevInput, input) {
+    button.Text := prevInput
+    MsgBox('Input "' . input . '" already exists.')
   }
 }

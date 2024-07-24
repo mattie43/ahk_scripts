@@ -4,7 +4,7 @@
 #Include ".\debug_box.ahk"
 #Include "..\scripts\index.ahk"
 
-global myGui, ih := InputHook("L1"), scriptCount := 0, prevInput := ""
+global myGui, ih := InputHook("L1"), currInputs := []
 
 if A_LineFile = A_ScriptFullPath && !A_IsCompiled {
 	myGui := Constructor()
@@ -25,23 +25,23 @@ Constructor() {
 	myGui.Add("Text", "x30 cRed", "Note:")
 	myGui.Add("Text", "yp x59", "Don't forget to import runelite profile")
 	myGui.Add("Text", "w240 x10 y+10 +0x10")
-
-  ; Scripts
-  addScript("Force Close", ExitApp)
-  addScript("Get Color at Mouse", getColorAtMouse)
-  addScript("Pray Flick", prayFlick)
-  addScript("Slow Karams", karamCooking)
-  addScript("Agility v1", agility)
-  addScript("One Tick Click + Spacebar", oneTickClick)
-  addScript("Mahogany Tables", mahogTables)
-  addScript("Fletch Darts", fletchDarts)
-  addScript("Drop Inv", dropInv)
-  addScript("Iron Power Mine", ironPowerMine)
-  addScript("Blackjack", blackjack)
-  addScript("Alch Camelot", alchCamelot)
-  addScript("NMZ", nmz)
-  addScript("Stall Thieving", stallThieving)
-
+  
+  tabs := myGui.Add("Tab3", "wp yp+12", ["General","Other"])
+  myGui.Add("Text", "Section h0 w0", "")
+  
+  ; General Scripts
+  addScript("Force Close", ExitApp, 0)
+  for ind, script in generalScripts {
+    addScript(script.name, script.fn, ind)
+  }
+  
+  ; Other Scripts
+  tabs.UseTab(2)
+  for ind, script in otherScripts {
+    addScript(script.name, script.fn, ind - 1)
+  }
+  
+  tabs.UseTab()
   debugBox()
 	
 	return myGui
