@@ -9,8 +9,6 @@
 #Include ".\fletch_darts.ahk"
 #Include ".\nmz.ahk"
 
-setup()
-
 generalScripts := [
   {
     name: "Drop Inventory",
@@ -38,6 +36,11 @@ otherScripts := [
   {
     name: "Mahogany Tables",
     fn: mahogTables,
+    desc: ""
+  },
+  {
+    name: "Fletch Darts",
+    fn: fletchDarts,
     desc: ""
   },
 ]

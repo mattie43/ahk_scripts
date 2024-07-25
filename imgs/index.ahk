@@ -2,7 +2,7 @@
 
 windowImgs := {
   game: "*TransBlack ..\imgs\game.png",
-  inventory: "*TransBlack ..\imgs\inventory.png",
+  inventory: "*70 *TransBlack ..\imgs\inventory.png",
   chat: "*TransBlack ..\imgs\chat.png",
   tick_counter: "..\imgs\tick_counter.png"
 }

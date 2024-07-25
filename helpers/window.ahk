@@ -1,5 +1,7 @@
 #Requires AutoHotkey v2.0
 
+global gameImgError := False
+
 ; Window setters
 window := {}
 window.game := {
@@ -105,6 +107,8 @@ activateRunelite() {
 }
 
 setWindowSection(section) {
+  global gameImgError
+
 	x := -1
 	y := -1
 	
@@ -112,8 +116,12 @@ setWindowSection(section) {
 		window.%section%.x := x
 		window.%section%.y := y
 	} else {
-		MsgBox("Failed to find img: " . section)
-		ExitApp
+    if (section == "game") {
+      gameImgError := True
+    } else {
+      MsgBox("Failed to find img: " . section)
+      ExitApp
+    }
 	}
 }
 
@@ -176,9 +184,11 @@ setPlayerCoords() {
 }
 
 setup() {
+  global gameImgError
+  
   setRunelite()
   activateRunelite()
-  Sleep(500)
+  Sleep(200)
   sections := ["game", "inventory", "chat", "tick_counter"]
   for ind, section in sections {
     setWindowSection(section)
@@ -187,4 +197,7 @@ setup() {
   setInvSlotsCoords()
   setBankCoords()
   setPlayerCoords()
+  if (gameImgError) {
+    MsgBox('Failed to find game img. If you are in resizeable, you may not be able to use "Other" scripts. If you are in fixed, try re-running gui.')
+  }
 }
