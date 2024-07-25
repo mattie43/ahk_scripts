@@ -32,27 +32,27 @@ generalScripts := [
 otherScripts := [
   {
     name: "NMZ - Prayer",
-    fn: nmz,
-    desc: ""
+    fn: (*) => nmz(),
+    desc: "nmz pray desc"
   },
   {
     name: "Mahogany Tables",
-    fn: mahogTables,
-    desc: ""
+    fn: (*) => mahogTables(),
+    desc: "mahog tables desc"
   },
   {
     name: "Fletch Darts",
-    fn: fletchDarts,
-    desc: ""
+    fn: (*) => fletchDarts(),
+    desc: "fletch darts desc"
   },
   {
-    name: "Cooking Karam",
-    fn: cooking,
-    desc: ""
+    name: "Cooking",
+    fn: (*) => cooking(),
+    desc: "cooking desc"
   },
   {
     name: "One Tick Karam",
-    fn: oneTickCooking,
-    desc: ""
+    fn: (*) => oneTickCooking(),
+    desc: "one tick cooking desc"
   },
 ]

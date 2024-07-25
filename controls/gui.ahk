@@ -1,8 +1,9 @@
 ﻿#Requires AutoHotkey v2.0
 
-#Include ".\add_script.ahk"
-#Include ".\debug_box.ahk"
 #Include "..\scripts\index.ahk"
+#Include ".\add_general_script.ahk"
+#Include ".\add_other_scripts.ahk"
+#Include ".\debug_box.ahk"
 
 global myGui, ih := InputHook("L1"), currInputs := []
 
@@ -12,7 +13,7 @@ if A_LineFile = A_ScriptFullPath && !A_IsCompiled {
 }
 
 Constructor() {
-  global myGui, setupComplete
+  global myGui
 
   ; Define GUI
 	myGui := Gui()
@@ -36,20 +37,19 @@ Constructor() {
   setupButton.OnEvent("Click", (*) =>
     setup()
     debug("Setup complete..")
+    setupButton.Opt("+Disabled")
   )
   
   ; General Scripts
   tabs.UseTab(2)
-  addScript("Force Close", ExitApp, 0)
+  addGeneralScript("Force Close", ExitApp, 0)
   for ind, script in generalScripts {
-    addScript(script.name, script.fn, ind)
+    addGeneralScript(script.name, script.fn, ind)
   }
   
   ; Other Scripts
   tabs.UseTab(3)
-  for ind, script in otherScripts {
-    addScript(script.name, script.fn, ind)
-  }
+  addOtherScripts()
   
   tabs.UseTab()
   debugBox()

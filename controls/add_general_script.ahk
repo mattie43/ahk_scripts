@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 
-addScript(name, onclick, scriptCount) {
+addGeneralScript(name, onclick, scriptCount) {
   global myGui, ih, currInputs
 
   y := (scriptCount * 30)
