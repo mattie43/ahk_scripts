@@ -31,7 +31,7 @@ Constructor() {
 
   ; Setup
   tabs.UseTab(1)
-  myGui.Add("Text", "xs ys w225", "Press setup to begin. Your RuneLite will automatically be pulled into focus. If you have more than one RuneLite open, it will default to the most recent.")
+  myGui.Add("Text", "xs ys w225", "Press setup to begin. Your RuneLite will automatically be pulled into focus. If you have more than one RuneLite open, it will default to the most recent.")1
   setupButton := myGui.Add("Button", "w55", "Setup")
   setupButton.OnEvent("Click", (*) =>
     setup()
