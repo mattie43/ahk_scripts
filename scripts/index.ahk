@@ -8,6 +8,8 @@
 #Include ".\mahog_tables.ahk"
 #Include ".\fletch_darts.ahk"
 #Include ".\nmz.ahk"
+#Include ".\cooking.ahk"
+#Include ".\one_tick_cooking.ahk"
 
 generalScripts := [
   {
@@ -41,6 +43,16 @@ otherScripts := [
   {
     name: "Fletch Darts",
     fn: fletchDarts,
+    desc: ""
+  },
+  {
+    name: "Cooking Karam",
+    fn: cooking,
+    desc: ""
+  },
+  {
+    name: "One Tick Karam",
+    fn: oneTickCooking,
     desc: ""
   },
 ]

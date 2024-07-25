@@ -143,13 +143,19 @@ getTickColor() {
 	return PixelGetColor(window.tick_counter.x, window.tick_counter.y)
 }
 
-listenToColorChange(callback) {
+listenToColorChange(callback, name := "") {
 	global isLooping
 	startColor := getTickColor()
 
   if (isLooping) {
+    if (name) {
+      debug("stopping " . name . "..")
+    }
     return isLooping := False
   } else {
+    if (name) {
+      debug("starting " . name . "..")
+    }
     isLooping := True
   }
 	

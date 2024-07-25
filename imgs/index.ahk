@@ -26,4 +26,5 @@ imgs := {
   prayer_orb_10: "*50 ..\imgs\prayer_orb_10.png",
   prayer_orb_11: "*50 ..\imgs\prayer_orb_11.png",
   prayer_orb_12: "*50 ..\imgs\prayer_orb_12.png",
+  not_cooking: "*TransBlack ..\imgs\not_cooking.png",
 }

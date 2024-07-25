@@ -41,5 +41,6 @@ mahogTables() {
 
     tickCount += 1
   }
-  listenToColorChange(callback)
+  
+  listenToColorChange(callback, "mahog tables")
 }
