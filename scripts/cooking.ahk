@@ -4,8 +4,8 @@ cooking() {
   tickCount := 0
 
   callback() {
+    ; bank
     if (tickCount == 1) {
-
       clickColorIn(colors.pink, "game")
     }
     if (tickCount == 2) {
@@ -16,6 +16,7 @@ cooking() {
       randSleep(50,100)
       Send("{Esc}")
     }
+    ; fire/range
     if (tickCount == 4) {
       clickColorIn(colors.orange, "game")
     }
