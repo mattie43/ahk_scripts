@@ -27,4 +27,10 @@ imgs := {
   prayer_orb_11: "*50 ..\imgs\prayer_orb_11.png",
   prayer_orb_12: "*50 ..\imgs\prayer_orb_12.png",
   not_cooking: "*TransBlack ..\imgs\not_cooking.png",
+  demon_butler_retrieve: "*50 ..\imgs\demon_butler_retrieve.png",
+  ava_accum: "*50 ..\imgs\ava_accum.png",
+  black_chaps: "*50 ..\imgs\black_chaps.png",
+  g_maul: "*TransBlack ..\imgs\g_maul.png",
+  rune_crossbow: "*TransBlack ..\imgs\rune_crossbow.png",
+  zamorak_cape: "*TransBlack ..\imgs\zamorak_cape.png",
 }

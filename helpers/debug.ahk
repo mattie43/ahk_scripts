@@ -6,6 +6,8 @@ debug(item) {
   time := FormatTime(A_Now, "HH:mm:ss")
   str := time . " - " . item
   listBox.Add([str])
+  items := ControlGetItems(listBox)
+  ControlChooseIndex(items.Length, listBox)
 }
 
 outDebug(arr := []) {

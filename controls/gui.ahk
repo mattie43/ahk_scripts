@@ -1,4 +1,5 @@
 ﻿#Requires AutoHotkey v2.0
+#SingleInstance Force
 
 #Include "..\scripts\index.ahk"
 #Include ".\add_general_script.ahk"
@@ -27,7 +28,7 @@ Constructor() {
 	myGui.Add("Text", "yp x59", "Don't forget to import runelite profile")
 	myGui.Add("Text", "w240 x10 y+10 +0x10")
   
-  tabs := myGui.Add("Tab3", "wp yp+12", ["Setup","General","Other"])
+  tabs := myGui.Add("Tab3", "wp yp+12", ["Setup","General","Other", "PvP"])
   myGui.Add("Text", "Section h0 w0", "")
 
   ; Setup
@@ -50,6 +51,11 @@ Constructor() {
   ; Other Scripts
   tabs.UseTab(3)
   addOtherScripts()
+
+  tabs.UseTab(4)
+  for ind, script in pvpScripts {
+    addGeneralScript(script.name, script.fn, ind-1)
+  }
   
   tabs.UseTab()
   debugBox()

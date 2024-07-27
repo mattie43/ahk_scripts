@@ -1,9 +1,5 @@
 #Requires AutoHotkey v2.0
 
-#Include "..\helpers\window.ahk"
-
-demonButlerRetrieveImg := "..\imgs\demon_butler_retrieve.png"
-
 global tickCount := 0
 
 mahogTables() {
@@ -34,7 +30,7 @@ mahogTables() {
       Send("1")
     }
     if (tickCount > 10) {
-      if ImageSearch(&x, &y, window.chat.x, window.chat.y, window.chat.x + window.chat.width, window.h, demonButlerRetrieveImg) {
+      if ImageSearch(&x, &y, window.chat.x, window.chat.y, window.chat.x + window.chat.width, window.h, imgs.demon_butler_retrieve) {
         tickCount := 0
       }
     }

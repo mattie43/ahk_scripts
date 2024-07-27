@@ -1,15 +1,21 @@
 #Requires AutoHotkey v2.0
 
 #Include "..\helpers\index.ahk"
-#Include ".\drop_inv.ahk"
-#Include ".\get_color_at_mouse.ahk"
-#Include ".\pray_flick.ahk"
-#Include ".\agility.ahk"
-#Include ".\mahog_tables.ahk"
-#Include ".\fletch_darts.ahk"
-#Include ".\nmz.ahk"
-#Include ".\cooking.ahk"
-#Include ".\one_tick_cooking.ahk"
+; General
+#Include ".\general\drop_inv.ahk"
+#Include ".\general\get_color_at_mouse.ahk"
+#Include ".\general\pray_flick.ahk"
+; Other
+#Include ".\other\agility.ahk"
+#Include ".\other\cooking.ahk"
+#Include ".\other\fletch_darts.ahk"
+#Include ".\other\mahog_tables.ahk"
+#Include ".\other\nmz.ahk"
+#Include ".\other\one_tick_cooking.ahk"
+; PvP
+#Include ".\pvp\mage.ahk"
+#Include ".\pvp\range.ahk"
+; #Include ".\pvp\spec.ahk"
 
 generalScripts := [
   {
@@ -54,5 +60,18 @@ otherScripts := [
     name: "One Tick Karam",
     fn: (*) => oneTickCooking(),
     desc: "one tick cooking desc"
+  },
+]
+
+pvpScripts := [
+  {
+    name: "Range",
+    fn: (*) => range(),
+    desc: "INCOMPLETE"
+  },
+  {
+    name: "Mage",
+    fn: (*) => mage(),
+    desc: "INCOMPLETE"
   },
 ]
