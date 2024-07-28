@@ -12,6 +12,7 @@
 #Include ".\other\mahog_tables.ahk"
 #Include ".\other\nmz.ahk"
 #Include ".\other\one_tick_cooking.ahk"
+#Include ".\other\alch_came.ahk"
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
@@ -60,6 +61,11 @@ otherScripts := [
     name: "One Tick Karam",
     fn: (*) => oneTickCooking(),
     desc: "one tick cooking desc"
+  },
+  {
+    name: "Alch Camelot Tele",
+    fn: (*) => alchCame(),
+    desc: "Alchs then Camelot teles."
   },
 ]
 
