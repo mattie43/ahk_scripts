@@ -33,4 +33,6 @@ imgs := {
   g_maul: "*TransBlack ..\imgs\g_maul.png",
   rune_crossbow: "*TransBlack ..\imgs\rune_crossbow.png",
   zamorak_cape: "*TransBlack ..\imgs\zamorak_cape.png",
+  not_fishing: "*TransBlack ..\imgs\not_fishing.png",
+  anymore_fish: "*50 ..\imgs\anymore_fish.png",
 }

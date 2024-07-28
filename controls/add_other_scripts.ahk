@@ -18,7 +18,7 @@ addOtherScripts() {
   ddl.OnEvent("Change", getDesc)
   
   ; Desc text
-  descText := myGui.Add("Text", "w225 xs ys+30", "")
+  descText := myGui.Add("Text", "w225 r8 xs ys+30 Wrap", "")
 
   clickHandler(*) {
     prevInput := button.Text

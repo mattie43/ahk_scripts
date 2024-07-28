@@ -13,6 +13,7 @@
 #Include ".\other\nmz.ahk"
 #Include ".\other\one_tick_cooking.ahk"
 #Include ".\other\alch_came.ahk"
+#Include ".\other\barb_fishing.ahk"
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
@@ -66,6 +67,11 @@ otherScripts := [
     name: "Alch Camelot Tele",
     fn: (*) => alchCame(),
     desc: "Alchs then Camelot teles."
+  },
+  {
+    name: "Barb Fishing",
+    fn: (*) => barbFishing(),
+    desc: 'Set your camera top down and use the camera point plugin named "Barb Fishing". Have your rod and feathers in inv slots 1 & 2. Start fishing one time, then begin the script.'
   },
 ]
 
