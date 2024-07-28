@@ -41,17 +41,17 @@ otherScripts := [
   {
     name: "NMZ - Prayer",
     fn: (*) => nmz(),
-    desc: "nmz pray desc"
+    desc: "Start in NMZ with any number of pray pots in your inventory, and pray melee already active."
   },
   {
     name: "Mahogany Tables",
     fn: (*) => mahogTables(),
-    desc: "mahog tables desc"
+    desc: "*Requires Demon Butler* Stand next to a removed table. Make your butler retrieve 24 planks from your bank. When he returns, start the script."
   },
   {
     name: "Fletch Darts",
     fn: (*) => fletchDarts(),
-    desc: "fletch darts desc"
+    desc: "Place your dart tips and feathers in slots 1 and 2 of you inv. Click on the second slot of your inventory, then begin the script."
   },
   {
     name: "Cooking",
@@ -66,7 +66,7 @@ otherScripts := [
   {
     name: "Alch Camelot Tele",
     fn: (*) => alchCame(),
-    desc: "Alchs then Camelot teles."
+    desc: "*INCOMPLETE* Tele to Camelot. Set your alch item undernearth the high alch spot of your spellbook. Then begin the script."
   },
   {
     name: "Barb Fishing",
