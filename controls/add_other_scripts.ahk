@@ -14,7 +14,7 @@ addOtherScripts() {
   button.OnEvent("Click", clickHandler)
 
   ; DDL of script names
-  ddl := myGui.Add("DropDownList", "vColorChoice Sort Choose1 yp", scriptNames)
+  ddl := myGui.Add("DropDownList", "vColorChoice Sort Choose1 yp w150", scriptNames)
   ddl.OnEvent("Change", getDesc)
   
   ; Desc text

@@ -14,6 +14,7 @@
 #Include ".\other\one_tick_cooking.ahk"
 #Include ".\other\alch_came.ahk"
 #Include ".\other\barb_fishing.ahk"
+#Include ".\other\oak_larders.ahk"
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
@@ -44,9 +45,14 @@ otherScripts := [
     desc: "Start in NMZ with any number of pray pots in your inventory, and pray melee already active."
   },
   {
-    name: "Mahogany Tables",
+    name: "Const. - Mahogany Tables",
     fn: (*) => mahogTables(),
-    desc: "*Requires Demon Butler* Stand next to a removed table. Make your butler retrieve 24 planks from your bank. When he returns, start the script."
+    desc: "*Requires Demon Butler and Servant's Money Bag* Stand next to a table space. Set your camera top down, North, and zoom enough to see the entire table. Make your butler retrieve 24 mahogany planks from your bank. When he returns, start the script."
+  },
+  {
+    name: "Const. - Oak Larders",
+    fn: (*) => oakLarders(),
+    desc: "*Requires Demon Butler and Servant's Money Bag* Stand next to a larder space. Set your camera top down, North, and zoom enough to see the entire larder. Make your butler retrieve 24 oak planks from your bank. When he returns, start the script."
   },
   {
     name: "Fletch Darts",
@@ -54,12 +60,12 @@ otherScripts := [
     desc: "Place your dart tips and feathers in slots 1 and 2 of you inv. Click on the second slot of your inventory, then begin the script."
   },
   {
-    name: "Cooking",
+    name: "Cooking - Any",
     fn: (*) => cooking(),
     desc: 'Start in Rogues Den or Myths Guild. Set your camera top down and use the camera point plugin named "Cooking". Put a cyan (FF00BEFF) screen marker around the food you want to cook in your bank. Start with the bank closed, and then begin.'
   },
   {
-    name: "One Tick Karam",
+    name: "Cooking - One Tick Karam",
     fn: (*) => oneTickCooking(),
     desc: 'Start in Rogues Den or Myths Guild. Set your camera top down and use the camera point plugin named "Cooking". Put a cyan (FF00BEFF) screen marker around the karambwans in your bank. Start with the bank closed, and then begin.'
   },
