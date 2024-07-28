@@ -56,12 +56,12 @@ otherScripts := [
   {
     name: "Cooking",
     fn: (*) => cooking(),
-    desc: "cooking desc"
+    desc: 'Start in Rogues Den or Myths Guild. Set your camera top down and use the camera point plugin named "Cooking". Put a cyan (FF00BEFF) screen marker around the food you want to cook in your bank. Start with the bank closed, and then begin.'
   },
   {
     name: "One Tick Karam",
     fn: (*) => oneTickCooking(),
-    desc: "one tick cooking desc"
+    desc: 'Start in Rogues Den or Myths Guild. Set your camera top down and use the camera point plugin named "Cooking". Put a cyan (FF00BEFF) screen marker around the karambwans in your bank. Start with the bank closed, and then begin.'
   },
   {
     name: "Alch Camelot Tele",
@@ -71,7 +71,7 @@ otherScripts := [
   {
     name: "Barb Fishing",
     fn: (*) => barbFishing(),
-    desc: 'Set your camera top down and use the camera point plugin named "Barb Fishing". Have your rod and feathers in inv slots 1 & 2. Start fishing one time, then begin the script.'
+    desc: 'Set your camera top down and use the camera point plugin named "Barb Fishing". Have your rod and feathers in inv slots 1 and 2. Start fishing one time, then begin the script.'
   },
 ]
 
