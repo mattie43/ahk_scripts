@@ -15,6 +15,7 @@
 #Include ".\other\alch_came.ahk"
 #Include ".\other\barb_fishing.ahk"
 #Include ".\other\oak_larders.ahk"
+#Include ".\other\falconry.ahk"
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
@@ -78,6 +79,11 @@ otherScripts := [
     name: "Barb Fishing",
     fn: (*) => barbFishing(),
     desc: 'Set your camera top down and use the camera point plugin named "Barb Fishing". Have your rod and feathers in inv slots 1 and 2. Start fishing one time, then begin the script.'
+  },
+  {
+    name: "Falconry",
+    fn: (*) => falconry(),
+    desc: 'Set your camera top down and use the camera point plugin named "Falconry".'
   },
 ]
 
