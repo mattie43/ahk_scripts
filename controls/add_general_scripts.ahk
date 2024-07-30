@@ -9,8 +9,8 @@ addGeneralScripts() {
   }
 
   myGui.Add("Text", "xs Wrap w225", 'Enter the inv slots you want to skip seperated by commas. Example: "1,2,3"')
-  _edit := myGui.Add("Edit", "xs", "")
-  _edit.OnEvent("Change", handleChange)
+  guiEdit := myGui.Add("Edit", "xs", "")
+  guiEdit.OnEvent("Change", handleChange)
 
   handleChange(obj, _) {
     text := obj.Value
