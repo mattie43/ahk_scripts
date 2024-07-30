@@ -10,7 +10,8 @@
 #Include ".\other\cooking.ahk"
 #Include ".\other\fletch_darts.ahk"
 #Include ".\other\mahog_tables.ahk"
-#Include ".\other\nmz.ahk"
+#Include ".\other\nmz_prayer.ahk"
+#Include ".\other\nmz_absorption.ahk"
 #Include ".\other\one_tick_cooking.ahk"
 #Include ".\other\alch_came.ahk"
 #Include ".\other\barb_fishing.ahk"
@@ -19,6 +20,7 @@
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
+#Include ".\pvp\insta_maul.ahk"
 ; #Include ".\pvp\spec.ahk"
 
 generalScripts := [
@@ -42,8 +44,13 @@ generalScripts := [
 otherScripts := [
   {
     name: "NMZ - Prayer",
-    fn: (*) => nmz(),
+    fn: (*) => nmzPrayer(),
     desc: "Start in NMZ with any number of pray pots in your inventory, and pray melee already active."
+  },
+  {
+    name: "NMZ - Absorption",
+    fn: (*) => nmzAbsorption(),
+    desc: "Set your quick prayers to have Rapid Heal. Enter NMZ with absorptions and a rock cake. Put yourself to 1 HP and drink some absorptions. Then begin the script."
   },
   {
     name: "Const. - Mahogany Tables",
@@ -96,6 +103,11 @@ pvpScripts := [
   {
     name: "Mage",
     fn: (*) => mage(),
+    desc: "INCOMPLETE"
+  },
+  {
+    name: "Insta Maul",
+    fn: (*) => instaMaul(),
     desc: "INCOMPLETE"
   },
 ]

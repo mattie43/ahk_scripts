@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 
-nmz() {
+nmzPrayer() {
   clickPot() {
     rand := Random(6,10)
     
