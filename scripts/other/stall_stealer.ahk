@@ -26,5 +26,5 @@ stallStealer() {
     }
   }
 
-  listenToColorChange(callback)
+  listenToColorChange(callback, "stall stealer")
 }

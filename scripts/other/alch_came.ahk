@@ -18,5 +18,5 @@ alchCame() {
     tickCount += 1
   }
 
-  listenToColorChange(callback)
+  listenToColorChange(callback, "alch camelot")
 }
