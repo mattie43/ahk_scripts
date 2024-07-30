@@ -1,12 +1,12 @@
 ﻿#Requires AutoHotkey v2.0
 
 prayFlick() {
-  prayFlickCallback() {
+  callback() {
     Click()
-    rand := Random(50, 90)
+    rand := Random(90, 120)
     Sleep(rand)
     Click()
   }
   
-  listenToColorChange(prayFlickCallback)
+  listenToColorChange(callback)
 }
