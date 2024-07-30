@@ -90,7 +90,7 @@ otherScripts := [
   {
     name: "Falconry",
     fn: (*) => falconry(),
-    desc: 'Set your camera top down and use the camera point plugin named "Falconry".'
+    desc: 'Set your camera top down and use the camera point plugin named "Falconry". Start in the SE of the Piscarilius hunting area.'
   },
 ]
 
