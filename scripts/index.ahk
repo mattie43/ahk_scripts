@@ -26,11 +26,6 @@
 
 generalScripts := [
   {
-    name: "Drop Inventory",
-    fn: dropInv,
-    desc: ""
-  },
-  {
     name: "Pray Flick",
     fn: prayFlick,
     desc: ""
@@ -38,6 +33,12 @@ generalScripts := [
   {
     name: "Get Color @Mouse",
     fn: getColorAtMouse,
+    desc: ""
+  },
+  ; Keep drop inv in last slot of arr
+  {
+    name: "Drop Inventory",
+    fn: dropInv,
     desc: ""
   },
 ]

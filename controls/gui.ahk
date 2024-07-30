@@ -2,7 +2,8 @@
 #SingleInstance Force
 
 #Include "..\scripts\index.ahk"
-#Include ".\add_general_script.ahk"
+#Include ".\add_script.ahk"
+#Include ".\add_general_scripts.ahk"
 #Include ".\add_other_scripts.ahk"
 #Include ".\debug_box.ahk"
 
@@ -43,18 +44,16 @@ Constructor() {
   
   ; General Scripts
   tabs.UseTab(2)
-  addGeneralScript("Force Close", ExitApp, 0)
-  for ind, script in generalScripts {
-    addGeneralScript(script.name, script.fn, ind)
-  }
+  addGeneralScripts()
   
   ; Other Scripts
   tabs.UseTab(3)
   addOtherScripts()
 
+  ; PvP Scripts
   tabs.UseTab(4)
   for ind, script in pvpScripts {
-    addGeneralScript(script.name, script.fn, ind-1)
+    addScript(script.name, script.fn, ind-1)
   }
   
   tabs.UseTab()

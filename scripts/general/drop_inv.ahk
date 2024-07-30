@@ -1,7 +1,11 @@
 #Requires AutoHotkey v2.0
 
+global dropInvSkips := []
+
 dropInv() {
+  global dropInvSkips
+
   MouseGetPos(&x, &y)
-  dropInventory()
+  dropInventory(dropInvSkips)
   MouseMove(x, y)
 }
