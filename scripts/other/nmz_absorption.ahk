@@ -39,9 +39,7 @@ nmzAbsorption() {
   clickPrayerOrb() {
     rand := Random(1,8)
     if ImageSearch(&x, &y, 0, 0, 900, 900, imgs.minimap_prayer) {
-      singleClick(x + rand, y + rand)
-      randSleep(100,130)
-      Click()
+      doubleClick(x + rand, y + rand)
     }
   }
 

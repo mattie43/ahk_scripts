@@ -2,46 +2,34 @@
 
 global isLooping := False
 
-getColorTopLeft(topLeft, bottomRight, color) {
-  x := -1
-  y := -1
-
-  if (PixelSearch(&x, &y, topLeft.x, topLeft.y, bottomRight.x, bottomRight.y, color, 0)) {
-    return { x: x, y: y }
-  } else {
-    return { x: -1, y: -1 }
-  }
+getColorTopLeft(&x, &y, tl, br, color) {
+  return PixelSearch(&x, &y, tl.x, tl.y, br.x, br.y, color, 0)
 }
 
-getColorBottomRight(topLeft, bottomRight, color) {
-  x := -1
-  y := -1
-
-	if (PixelSearch(&x, &y, bottomRight.x, bottomRight.y, topLeft.x, topLeft.y, color, 0)) {
-    return { x: x, y: y }
-  } else {
-    return { x: -1, y: -1 }
-  }
+getColorBottomRight(&x, &y, tl, br, color) {
+	return PixelSearch(&x, &y, br.x, br.y, tl.x, tl.y, color, 0)
 }
 
-getColorCenter(topLeft, bottomRight, color) {	
+getColorCenter(&cx, &cy, tl, br, color) {
 	; Search top left to bottom right
-	tl := getColorTopLeft(topLeft, bottomRight, color)
+	_tl := getColorTopLeft(&tlx, &tly, tl, br, color)
 	
 	; Search bottom right to top left
-	br := getColorBottomRight(topLeft, bottomRight, color)
-	
-  return {
-    x: Floor((tl.x + br.x) / 2),
-    y: Floor((tl.y + br.y) / 2)
+	_br := getColorBottomRight(&brx, &bry, tl, br, color)
+
+  if (tlx AND tly AND brx AND bry) {
+    cx := Floor((tlx + brx) / 2)
+    cy := Floor((tly + bry) / 2)
   }
+  
+  return _tl AND _br
 }
 
 selectTab(tab) {
   singleClick(window.tabs.%tab%.x, window.tabs.%tab%.y, 10)
 }
 
-findColorIn(color, section) {
+findColorIn(&x, &y, color, section) {
 	chosenSection := {}
 	
 	if section == "game" {
@@ -52,17 +40,16 @@ findColorIn(color, section) {
 		chosenSection := window.inventory
 	}
 	
-	topLeft := {
+	tl := {
 		x: chosenSection.x,
 		y: chosenSection.y
 	}
-	bottomRight := {
+	br := {
 		x: chosenSection.x + chosenSection.width,
 		y: chosenSection.y + chosenSection.height
 	}
 	
-	coords := getColorCenter(topLeft, bottomRight, color)
-	return coords
+	return getColorCenter(&x, &y, tl, br, color)
 }
 
 findImageIn(&x, &y, image, section, width, height) {
@@ -89,8 +76,9 @@ findImageIn(&x, &y, image, section, width, height) {
 }
 
 clickColorIn(color, section, rand := 0) {
-  coords := findColorIn(color, section)
-  singleClick(coords.x, coords.y, rand)
+  if findColorIn(&x, &y, color, section) {
+    singleClick(x, y, rand)
+  }
 }
 
 clickImageIn(image, section, width, height, rand := 0) {
