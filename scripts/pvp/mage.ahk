@@ -17,7 +17,7 @@ mage() {
   Send("{F2}")
   Sleep(50)
 
-  if (findImageIn(&x, &y, imgs.zamorak_cape, "inventory", 0, 0)) {
+  if (findImageIn(&x, &y, imgs.zamorak_cape, "inventory")) {
     gearSwap()
     
     ; flames of zammy

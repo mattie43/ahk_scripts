@@ -11,14 +11,14 @@ barbFishing() {
     }
 
     ; full inv
-    if (findImageIn(&_, &_, imgs.anymore_fish, "chat", 0, 0)) {
+    if (findImageIn(&_, &_, imgs.anymore_fish, "chat")) {
       droppingInv := True
       dropInventory([1,2])
       droppingInv := False
     }
 
     ; not fishing
-    if (findImageIn(&_, &_, imgs.not_fishing, "game", 0, 0)) {
+    if (findImageIn(&_, &_, imgs.not_fishing, "game")) {
       tl := {
         x: window.game.x,
         y: window.game.y
@@ -31,7 +31,7 @@ barbFishing() {
 
       if getColorTopLeft(&x, &y, tl, br, colors.off_cyan) {
         walking := True
-        singleClick(coords.x + 20, coords.y + 20, 5)
+        singleClick(x + 20, y + 20, 5)
         SetTimer((*) => walking := False, -5000)
       }
     }

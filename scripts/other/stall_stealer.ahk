@@ -9,7 +9,7 @@ stallStealer() {
       return
     }
 
-    if (findImageIn(&_, &_, imgs.inventory_full, "chat", 0, 0)) {
+    if (findImageIn(&_, &_, imgs.inventory_full, "chat")) {
       droppingInv := True
       dropInventory()
       return droppingInv := False
@@ -21,7 +21,7 @@ stallStealer() {
 
     if findColorIn(&x, &y, colors.pink, "game") {
       stealing := True
-      singleClick(coords.x, coords.y, 5)
+      singleClick(x, y, 5)
     }
   }
 

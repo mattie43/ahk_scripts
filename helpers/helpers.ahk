@@ -52,7 +52,7 @@ findColorIn(&x, &y, color, section) {
 	return getColorCenter(&x, &y, tl, br, color)
 }
 
-findImageIn(&x, &y, image, section, width, height) {
+findImageIn(&x, &y, image, section) {
 	chosenSection := {}
 	
 	if section == "game" {
@@ -82,7 +82,7 @@ clickColorIn(color, section, rand := 0) {
 }
 
 clickImageIn(image, section, width, height, rand := 0) {
-  if findImageIn(&x, &y, image, section, width, height) {
+  if findImageIn(&x, &y, image, section) {
     singleClick(x, y, rand)
   }
 }

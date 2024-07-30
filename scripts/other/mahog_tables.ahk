@@ -30,7 +30,7 @@ mahogTables() {
       Send("1")
     }
     if (tickCount > 10) {
-      if ImageSearch(&x, &y, window.chat.x, window.chat.y, window.chat.x + window.chat.width, window.h, imgs.demon_butler_retrieve) {
+      if findImageIn(&_, &_, imgs.demon_butler_retrieve, "chat") {
         tickCount := 0
       }
     }

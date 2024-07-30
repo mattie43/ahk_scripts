@@ -18,7 +18,7 @@ range() {
   Send("{F2}")
   Sleep(50)
 
-  if (findImageIn(&x, &y, imgs.ava_accum, "inventory", 0, 0)) {
+  if (findImageIn(&x, &y, imgs.ava_accum, "inventory")) {
     gearSwap()
     
     ; click opp

@@ -16,7 +16,7 @@ agility(){
     check := Abs(p - m)
 
     if (check < 50) {
-      singleClick(mog.x, mog.y)
+      singleClick(mx, my)
       Loop(10) {
         if not findColorIn(&_, &_, colors.orange, "game") {
           break

@@ -7,28 +7,28 @@ nmzAbsorption() {
   clickPot() {
     rand := Random(6,10)
     
-    if (findImageIn(&x, &y, imgs.absorption_1, "inventory", 0, 0)) {
+    if (findImageIn(&x, &y, imgs.absorption_1, "inventory")) {
       MouseMove(x + rand, y + rand)
       randSleep(90,120)
       Click()
       return
     }
   
-    if (findImageIn(&x, &y, imgs.absorption_2, "inventory", 0, 0)) {
+    if (findImageIn(&x, &y, imgs.absorption_2, "inventory")) {
       MouseMove(x + rand, y + rand)
       randSleep(90,120)
       Click()
       return
     }
   
-    if (findImageIn(&x, &y, imgs.absorption_3, "inventory", 0, 0)) {
+    if (findImageIn(&x, &y, imgs.absorption_3, "inventory")) {
       MouseMove(x + rand, y + rand)
       randSleep(90,120)
       Click()
       return
     }
 
-    if (findImageIn(&x, &y, imgs.absorption_4, "inventory", 0, 0)) {
+    if (findImageIn(&x, &y, imgs.absorption_4, "inventory")) {
       MouseMove(x + rand, y + rand)
       randSleep(90,120)
       Click()
