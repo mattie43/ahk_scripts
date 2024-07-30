@@ -36,4 +36,5 @@ imgs := {
   not_fishing: "*TransBlack ..\imgs\not_fishing.png",
   anymore_fish: "*50 ..\imgs\anymore_fish.png",
   minimap_prayer: "*TransBlack ..\imgs\minimap_prayer.png",
+  inventory_full: "*50 ..\imgs\inventory_full.png",
 }

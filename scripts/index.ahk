@@ -17,6 +17,7 @@
 #Include ".\other\barb_fishing.ahk"
 #Include ".\other\oak_larders.ahk"
 #Include ".\other\falconry.ahk"
+#Include ".\other\stall_stealer.ahk"
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
@@ -70,12 +71,12 @@ otherScripts := [
   {
     name: "Cooking - Any",
     fn: (*) => cooking(),
-    desc: 'Start in Rogues Den or Myths Guild. Set your camera top down and use the camera point plugin named "Cooking". Put a cyan (FF00BEFF) screen marker around the food you want to cook in your bank. Start with the bank closed, and then begin.'
+    desc: 'Start in Rogues Den or Myths Guild. Set your camera top down and use the camera point plugin named "Cooking/Stalls". Put a cyan (FF00BEFF) screen marker around the food you want to cook in your bank. Start with the bank closed, and then begin.'
   },
   {
     name: "Cooking - One Tick Karam",
     fn: (*) => oneTickCooking(),
-    desc: 'Start in Rogues Den or Myths Guild. Set your camera top down and use the camera point plugin named "Cooking". Put a cyan (FF00BEFF) screen marker around the karambwans in your bank. Start with the bank closed, and then begin.'
+    desc: 'Start in Rogues Den or Myths Guild. Set your camera top down and use the camera point plugin named "Cooking/Stalls". Put a cyan (FF00BEFF) screen marker around the karambwans in your bank. Start with the bank closed, and then begin.'
   },
   {
     name: "Alch Camelot Tele",
@@ -85,12 +86,17 @@ otherScripts := [
   {
     name: "Barb Fishing",
     fn: (*) => barbFishing(),
-    desc: 'Set your camera top down and use the camera point plugin named "Barb Fishing". Have your rod and feathers in inv slots 1 and 2. Start fishing one time, then begin the script.'
+    desc: 'Set your camera top down and use the camera point plugin "Barb Fishing". Have your rod and feathers in inv slots 1 and 2. Start fishing one time, then begin the script.'
   },
   {
     name: "Falconry",
     fn: (*) => falconry(),
-    desc: 'Set your camera top down and use the camera point plugin named "Falconry". Start in the SE of the Piscarilius hunting area.'
+    desc: 'Set your camera top down and use the camera point plugin "Falconry". Start in the SE of the Piscarilius hunting area.'
+  },
+  {
+    name: "Stall Stealer",
+    fn: (*) => stallStealer(),
+    desc: 'Set your camera top down and use the camera point plugin "Cooking/Stalls". Works on any stall. If the stall is not already marked, just object mark it pink (FFFF00FF).'
   },
 ]
 
