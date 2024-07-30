@@ -19,25 +19,21 @@ barbFishing() {
 
     ; not fishing
     if (findImageIn(&_, &_, imgs.not_fishing, "game", 0, 0)) {
-      topLeft := {
+      tl := {
         x: window.game.x,
         y: window.game.y
       }
 
-      bottomRight := {
+      br := {
         x: window.game.x + window.game.width,
         y: window.game.y + window.game.height
       }
 
-      coords := getColorTopLeft(topLeft, bottomRight, colors.off_cyan)
-
-      if (coords.x == -1) {
-        return
+      if getColorTopLeft(&x, &y, tl, br, colors.off_cyan) {
+        walking := True
+        singleClick(coords.x + 20, coords.y + 20, 5)
+        SetTimer((*) => walking := False, -5000)
       }
-
-      walking := True
-      singleClick(coords.x + 20, coords.y + 20, 5)
-      SetTimer((*) => walking := False, -5000)
     }
   }
 

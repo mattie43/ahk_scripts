@@ -19,8 +19,7 @@ stallStealer() {
       return stealing := False
     }
 
-    coords := findColorIn(colors.pink, "game")
-    if (coords.x != -1) {
+    if findColorIn(&x, &y, colors.pink, "game") {
       stealing := True
       singleClick(coords.x, coords.y, 5)
     }

@@ -5,11 +5,11 @@ falconry() {
   droppingInv := False
   lastClickOrange := False
 
-  topLeft := {
+  tl := {
     x: window.game.x,
     y: window.game.y
   }
-  bottomRight := {
+  br := {
     x: window.game.x + window.game.width,
     y: window.game.y + window.game.height
   }
@@ -20,22 +20,19 @@ falconry() {
     }
 
     if (Mod(tickCount, 4) == 0) {
-      rand := Random(8,10)
+      rand := Random(8,12)
 
-      oraCoords := getColorTopLeft(topLeft, bottomRight, colors.orange)
-      cyanCoords := getColorTopLeft(topLeft, bottomRight, colors.off_cyan)
-
-      if (oraCoords.x != -1) {
+      if getColorTopLeft(&orangeX, &orangeY, tl, br, colors.orange) {
         lastClickOrange := True
-        singleClick(oraCoords.x + rand, oraCoords.y + rand)
-      } else if (cyanCoords.x != -1) {
+        singleClick(orangeX + rand, orangeY + rand)
+      } else if getColorTopLeft(&cyanX, &cyanY, tl, br, colors.off_cyan) {
         if (lastClickOrange) {
           droppingInv := True
-          dropInventory([3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28])
+          dropInventory([5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28])
           lastClickOrange := False
           return droppingInv := False
         }
-        singleClick(cyanCoords.x + rand, cyanCoords.y + rand)
+        singleClick(cyanX + rand, cyanY + rand)
       }
     }
 

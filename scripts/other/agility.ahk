@@ -6,20 +6,19 @@ agility(){
   global isMoving
 
   mogCheck() {
-    playerX := window.player.x
-    playerY := window.player.y
-    mog := findColorIn(colors.orange, "game")
+    if not findColorIn(&mx, &my, colors.orange, "game") {
+      return
+    }
 
-    p := playerX + playerY
-    m := mog.x + mog.y
+    p := window.player.x + window.player.y
+    m := mx + my
 
     check := Abs(p - m)
 
     if (check < 50) {
       singleClick(mog.x, mog.y)
       Loop(10) {
-        mog := findColorIn(colors.orange, "game")
-        if (mog.x == -1) {
+        if not findColorIn(&_, &_, colors.orange, "game") {
           break
         }
         Sleep(600)
