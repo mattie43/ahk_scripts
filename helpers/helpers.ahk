@@ -136,12 +136,12 @@ listenToColorChange(callback, name := "") {
 
   if (isLooping) {
     if (name) {
-      debug("stopping " . name . "..")
+      debug("Stopping " . name . "..")
     }
     return isLooping := False
   } else {
     if (name) {
-      debug("starting " . name . "..")
+      debug("Starting " . name . "..")
     }
     isLooping := True
   }
