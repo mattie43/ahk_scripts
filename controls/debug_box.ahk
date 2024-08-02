@@ -3,10 +3,10 @@
 global myGui, listBox
 
 debugBox() {
-  global listBox
+  global listBox, contentWidth
 
   time := FormatTime(A_Now, "HH:mm:ss")
   str := time . " - Starting GUI.."
 
-  listBox := myGui.Add("ListBox", "x10 w240 ReadOnly r10", [str])
+  listBox := myGui.Add("ListBox", "x10 w" . contentWidth . " ReadOnly r10", [str])
 }

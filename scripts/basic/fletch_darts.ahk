@@ -4,8 +4,10 @@ fletchDarts() {
 	global isLooping
 
   if (isLooping) {
+    debug("Stopping fletch darts..")
     return isLooping := False
   } else {
+    debug("Starting fletch darts..")
     isLooping := True
   }
 

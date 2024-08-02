@@ -8,5 +8,5 @@ prayFlick() {
     Click()
   }
   
-  listenToColorChange(callback)
+  listenToColorChange(callback, "pray flick")
 }

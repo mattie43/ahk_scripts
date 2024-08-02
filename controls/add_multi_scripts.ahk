@@ -1,11 +1,13 @@
 #Requires AutoHotkey v2.0
 
-addOtherScripts() {
-  global myGui, ih, currInputs
+global basicEditBox := ""
+
+addMultiScripts(scripts) {
+  global myGui, ih, currInputs, tabs, basicEditBox
 
   ; Get all script names
   scriptNames := []
-  for ind, item in otherScripts {
+  for ind, item in scripts {
     scriptNames.Push(item.name)
   }
 
@@ -14,11 +16,15 @@ addOtherScripts() {
   button.OnEvent("Click", clickHandler)
 
   ; DDL of script names
-  ddl := myGui.Add("DropDownList", "vColorChoice Sort Choose1 yp w150", scriptNames)
+  ddl := myGui.Add("DropDownList", "Sort Choose1 yp w170", scriptNames)
   ddl.OnEvent("Change", getDesc)
+
+  ; Drop Inv and X Ticks edit
+  editBox := myGui.Add("Edit", "w100 r1", "")
+  editBox.OnEvent("Change", updateEditBoxValue)
   
   ; Desc text
-  descText := myGui.Add("Text", "w225 r8 xs ys+30 Wrap", "")
+  descText := myGui.Add("Text", "w225 r8 xs ys+60 Wrap", "")
 
   clickHandler(*) {
     prevInput := button.Text
@@ -57,25 +63,38 @@ addOtherScripts() {
   getDesc(obj, _) {
     desc := ""
     objText := obj.Text
-    for (ind, item in otherScripts) {
+    for (ind, item in scripts) {
       if (item.name == objText) {
         desc := item.desc
       }
     }
     descText.Text := desc
+
+    ; Show/Hide edit box for drop inv or clicking x ticks
+    if (objText == "Drop Inventory" OR objText == "Click Every X Ticks") {
+      editBox.Visible := True
+      descText.Move(, 94)
+    } else {
+      editBox.Visible := False
+      descText.Move(, 64)
+    }
   }
 
   checkCurrentScript(*) {    
     foundItem := {}
     ddlText := ddl.Text
     
-    for (ind, item in otherScripts) {
+    for (ind, item in scripts) {
       if (item.name == ddlText) {
         foundItem := item
       }
     }
 
     foundItem.fn()
+  }
+
+  updateEditBoxValue(obj, _) {
+    basicEditBox := obj.Text
   }
 
   getDesc(ddl, "")
