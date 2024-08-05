@@ -19,6 +19,7 @@
 #Include ".\advanced\oak_larders.ahk"
 #Include ".\advanced\falconry.ahk"
 #Include ".\advanced\stall_stealer.ahk"
+#Include ".\advanced\smithing.ahk"
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
@@ -108,6 +109,11 @@ advancedScripts := [
     name: "Agility Rooftops",
     fn: (*) => agility(),
     desc: 'WIP'
+  },
+  {
+    name: "Smithing - Gold Ore",
+    fn: (*) => smithing(),
+    desc: 'Make sure gold ores are visible in your bank. Have "Quantity: All" selected. Make sure "Space" is set to gold bars (your last option) at the furnace. Stand in front of the pink bank booth in Edgeville with a full inventory of gold ores. Then begin this script.'
   },
 ]
 

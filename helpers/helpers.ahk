@@ -208,6 +208,12 @@ playerInTile(color, altHeight := 0) {
   return False
 }
 
+stopLooping() {  
+  global isLooping
+
+  isLooping := False
+}
+
 /*
 #HotIf WinActive("YourWindowTitle")
 ~Esc::x := y
