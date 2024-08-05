@@ -3,18 +3,18 @@
 global isLooping := False
 
 getColorTopLeft(&x, &y, tl, br, color) {
+	; Search top left to bottom right
   return PixelSearch(&x, &y, tl.x, tl.y, br.x, br.y, color, 0)
 }
 
 getColorBottomRight(&x, &y, tl, br, color) {
+	; Search bottom right to top left
 	return PixelSearch(&x, &y, br.x, br.y, tl.x, tl.y, color, 0)
 }
 
 getColorCenter(&cx, &cy, tl, br, color) {
-	; Search top left to bottom right
 	_tl := getColorTopLeft(&tlx, &tly, tl, br, color)
 	
-	; Search bottom right to top left
 	_br := getColorBottomRight(&brx, &bry, tl, br, color)
 
   if (tlx AND tly AND brx AND bry) {
@@ -78,12 +78,18 @@ findImageIn(&x, &y, image, section) {
 clickColorIn(color, section, rand := 0) {
   if findColorIn(&x, &y, color, section) {
     singleClick(x, y, rand)
+    return True
+  } else {
+    return False
   }
 }
 
 clickImageIn(image, section, width, height, rand := 0) {
   if findImageIn(&x, &y, image, section) {
     singleClick(x, y, rand)
+    return True
+  } else {
+    return False
   }
 }
 
@@ -190,11 +196,11 @@ clickInventory(num) {
   singleClick(x, y, 5)
 }
 
-playerInTile(color) {
-  playerX := window.player.x
-  playerY := window.player.y
+playerInTile(color, altHeight := 0) {
+  px := window.player.x
+  py := window.player.y
   
-  playerColor := PixelGetColor(playerX, playerY)
+  playerColor := PixelGetColor(px, py - altHeight)
 
   if (playerColor == color) {
     return True

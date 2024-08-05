@@ -8,7 +8,7 @@
 #Include ".\basic\click_x_ticks.ahk"
 #Include ".\basic\fletch_darts.ahk"
 ; Advanced
-#Include ".\advanced\agility.ahk"
+#Include ".\advanced\agility\agility.ahk"
 #Include ".\advanced\cooking.ahk"
 #Include ".\advanced\mahog_tables.ahk"
 #Include ".\advanced\nmz_prayer.ahk"
@@ -103,6 +103,11 @@ advancedScripts := [
     name: "Stall Stealer",
     fn: (*) => stallStealer(),
     desc: 'Set your camera top down and use the camera point plugin "Cooking/Stalls". Works on any stall. If the stall is not already marked, just object mark it pink (FFFF00FF). Then begin this script.'
+  },
+  {
+    name: "Agility Rooftops",
+    fn: (*) => agility(),
+    desc: 'WIP'
   },
 ]
 
