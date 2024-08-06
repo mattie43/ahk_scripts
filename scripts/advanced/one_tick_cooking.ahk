@@ -17,7 +17,7 @@ oneTickCooking() {
       clickInventory(28)
       Send("{Space}")
       randSleep(50,90)
-      clickColorIn(colors.orange, "game")
+      clickColorIn(colors.orange, "game", 6)
       Send("{Space}")
       randSleep(100,130)
       Send("{Space}")
@@ -27,13 +27,13 @@ oneTickCooking() {
 
     ; BANKING
     if (tickCount == 1) {
-      clickColorIn(colors.pink, "game")
+      clickColorIn(colors.pink, "game", 6)
     }
     if (tickCount == 2) {
       depositAll()
     }
     if (tickCount == 3) {
-      clickColorIn(colors.off_cyan, "game")
+      clickColorIn(colors.off_cyan, "game", 4)
       randSleep(50,100)
       Send("{Esc}")
       oneTickCycleCount += 1
