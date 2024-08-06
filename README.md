@@ -60,7 +60,7 @@ This will be the profile you must use with all scripts.
 Runelite will not auto update this import when you pull an update from this repo.  
 You will need to re-import each time a new script is added that you want to use.
 
-## Time to start botting
+## Time to run a script
 Here are some points to cover about the program:
 
 1. <span style="color: #eb3434">This is how you setup the bot before starting any scripts. This is how the window, game, chat, and inventory positions are set.</span>
