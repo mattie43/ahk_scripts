@@ -7,6 +7,7 @@
 #Include ".\basic\pray_flick.ahk"
 #Include ".\basic\click_x_ticks.ahk"
 #Include ".\basic\fletch_darts.ahk"
+#Include ".\basic\ocr_test.ahk"
 ; Advanced
 #Include ".\advanced\agility\agility.ahk"
 #Include ".\advanced\cooking.ahk"
@@ -55,6 +56,11 @@ basicScripts := [
     name: "Fletch Darts",
     fn: (*) => fletchDarts(),
     desc: 'Place your dart tips and feathers in slots one and two of your inventory. "Use" the item in the second slot of your inventory, then begin this script.'
+  },
+  {
+    name: "OCR Testing",
+    fn: (*) => ocrTest(),
+    desc: 'Tool for developing.'
   },
 ]
 
