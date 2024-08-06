@@ -111,7 +111,7 @@ advancedScripts := [
   {
     name: "Agility Rooftops",
     fn: (*) => agility(),
-    desc: 'WIP'
+    desc: '*Incomplete* Only working in Draynor Village atm, does not pick up marks. Set camera top down, camera point pluigin "Agility". Begin at ending blue square.'
   },
   {
     name: "Smithing - Gold Ore",

@@ -44,9 +44,9 @@ agility(){
 
   clickNextColor() {
     ; mog first?
-    if mogCheck() {
-      return
-    }
+    ; if mogCheck() {
+    ;   return
+    ; }
 
     ; try for next pink in step count?
     if (stepCount > 0) {
@@ -76,7 +76,7 @@ agility(){
   }
 
   checkPlayerTile() {
-    if (playerInTile(colors.yellow, 6) OR playerInTile(colors.off_cyan, 6)) {
+    if (playerInTile(colors.yellow) OR playerInTile(colors.off_cyan)) {
       debug("player in yellow  or blue tile")
       return currentStep := "click_tile"
     }
