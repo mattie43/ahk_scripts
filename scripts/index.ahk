@@ -23,6 +23,7 @@
 #Include ".\advanced\gem_cutting.ahk"
 #Include ".\advanced\glass_blowing.ahk"
 #Include ".\advanced\woodcutting.ahk"
+#Include ".\advanced\herblore_14.ahk"
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
@@ -132,6 +133,11 @@ advancedScripts := [
     name: "Woodcutting - Teak",
     fn: (*) => woodcutting(),
     desc: '*Incomplete, but useable* Start in the North of Isle of Soul in-between the two marked teak trees. Your first inventory slot will not be dropped. Set the camera top down and use the Cooking/Stalls camera point plugin. Then begin the script.'
+  },
+  {
+    name: "Herblore - 14",
+    fn: (*) => herblore14(),
+    desc: 'Stand west of the marked banker in the GE. Mark your herblore pot and secondary ingredient in your bank with a cyan (FF00BEFF) and orange (FFFF6000) screen marker. Have "Quantity: 14" selected. Close your bank interface. Set your camera top down and use the camera point plugin named "Cooking/Stalls". Then begin this script.'
   },
 ]
 
