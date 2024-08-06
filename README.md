@@ -39,6 +39,7 @@ Make sure to have these options selected within Runescape's in-game settings.
 
 ![Layout](./readmeimgs/layout.png)  
 ![Shift Drop](./readmeimgs/shift_drop.png)  
+![Esc Close](./readmeimgs/esc_close.png)  
 ![Brightness](./readmeimgs/brightness.png)  
 ![Disable Level Up](./readmeimgs/disable_level_up.png)  
 ![Hide Roofs](./readmeimgs/hide_roofs.png)

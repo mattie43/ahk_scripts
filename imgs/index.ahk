@@ -38,4 +38,5 @@ imgs := {
   minimap_prayer: "*TransBlack ..\imgs\minimap_prayer.png",
   inventory_full: "*50 ..\imgs\inventory_full.png",
   gold_ore: "*TransBlack ..\imgs\gold_ore.png",
+  molten_glass: "*TransBlack ..\imgs\molten_glass.png",
 }

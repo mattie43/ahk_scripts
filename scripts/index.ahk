@@ -21,6 +21,7 @@
 #Include ".\advanced\stall_stealer.ahk"
 #Include ".\advanced\smithing.ahk"
 #Include ".\advanced\gem_cutting.ahk"
+#Include ".\advanced\glass_blowing.ahk"
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
@@ -117,9 +118,14 @@ advancedScripts := [
     desc: 'Make sure gold ores are visible in your bank. Have "Quantity: All" selected. Make sure "Space" is set to gold bars (your last option) at the furnace. Stand in front of the pink bank booth in Edgeville with a full inventory of gold ores. Then begin this script.'
   },
   {
-    name: "Gem Cutting",
+    name: "Crafting - Gem Cutting",
     fn: (*) => gemCutting(),
     desc: 'Stand west of the marked banker in the GE. Put a chisel in slot one of you inventory. Mark your gems in your bank with a cyan (FF00BEFF) screen marker. Have "Quantity: All" selected. Close your bank interface. Set your camera top down and use the camera point plugin named "Cooking/Stalls". Then begin this script.'
+  },
+  {
+    name: "Crafting - Glass Blowing",
+    fn: (*) => glassBlowing(),
+    desc: 'Stand west of the marked banker in the GE. Put a glassblowing pipe in slot one of you inventory. Have "Quantity: All" selected. Make sure molten glass is in view in your bank. Close your bank interface. Make sure "Space" is set to the item you want to make (your last option). Set your camera top down and use the camera point plugin named "Cooking/Stalls". Then begin this script.'
   },
 ]
 

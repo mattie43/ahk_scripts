@@ -84,9 +84,9 @@ clickColorIn(color, section, rand := 0) {
   }
 }
 
-clickImageIn(image, section, width, height, rand := 0) {
+clickImageIn(image, section, width := 0, height := 0, rand := 0) {
   if findImageIn(&x, &y, image, section) {
-    singleClick(x, y, rand)
+    singleClick(x + width, y + height, rand)
     return True
   } else {
     return False
