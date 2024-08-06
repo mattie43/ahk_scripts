@@ -67,6 +67,9 @@ Here are some points to cover about the program:
 2. <span style="color: yellow">This is where the camera point plugin is. Many scripts will use this to get the correct camera setup.</span>
 3. <span style="color: #2ad135">This is the button to load the specific camera point. "Smithing" in this example.</span>
 4. <span style="color: #3467eb">This is the screen marker plugin. Some plugins may have you put a screen marker on an item in your bank if it can vary for an individual script.</span> -->
+
+<code style="color: aqua">test</code>
+
 ![Lets Begin Text](./readmeimgs/lets_begin_text.png)  
 ![Lets Begin](./readmeimgs/lets_begin.png)
 
