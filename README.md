@@ -12,7 +12,7 @@ Git download: https://git-scm.com/downloads
 ## Clone this repo
 1. Open a GIT Bash, Terminal, Powershell, or Command Prompt where you want to save this project (Right-Click Desktop for ease, can move the folder later).  
 ![GIT Bash](./readmeimgs/git_bash.png)  
-2. Copy and paste this code into your console  
+2. Copy and paste this code into your terminal  
 ```
 git clone https://github.com/mattie43/ahk_scripts.git
 ```  
@@ -51,7 +51,27 @@ These are optional QOL settings you can also add.
 ![World Switcher](./readmeimgs/world_switcher.png)
 
 ## RuneLite setup
-Import the profile that came inside this repo (runelite-profile.properties)  
-This will be the profile you must use with all scripts.
+Import the profile that came with this repo (runelite-profile.properties)  
+You can rename it if you would like.
 
 ![Import Profile](./readmeimgs/import_profile.png)
+
+This will be the profile you must use with all scripts.  
+Runelite will not auto update this import when you pull an update from this repo.  
+You will need to re-import each time a new script is added that you want to use.
+
+## Time to start botting
+Here are some points to cover about the program:
+
+1. <span style="color: #eb3434">This is how you setup the bot before starting any scripts. This is how the window, game, chat, and inventory positions are set.</span>
+2. <span style="color: yellow">This is where the camera point plugin is. Many scripts will use this to get the correct camera setup.</span>
+3. <span style="color: #2ad135">This is the button to load the specific camera point. "Smithing" in this example.</span>
+4. <span style="color: #3467eb">This is the screen marker plugin. Some plugins may have you put a screen marker on an item in your bank if it can vary for an individual script.</span>
+
+![Lets Begin](./readmeimgs/lets_begin.png)
+
+1. <span style="color: #2ad135">There are two types of scripts, Basic and Advanced, seperated by tabs.</span>
+2. <span style="color: #3467eb">This is the hotkey button. After you click on it, it will listen for the next keybord press (exluding Tab and Space). If you press Esc, it will reset the current hotkey. Once a hotkey is set, make sure you are focused on RuneLite, then press your hotkey to toggle starting and stopping your script.</span>
+3. <span style="color: #eb3434">This is the "debug" section. When starting or stopping a script, or an error occuring, it will print out what it can for useful information.</span>
+
+![Smithing Example](./readmeimgs/smithing_example.png)

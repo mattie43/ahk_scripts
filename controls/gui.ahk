@@ -8,7 +8,7 @@
 
 global myGui, ih := InputHook("L1"), currInputs := [], maxWidth := 320, contentWidth := 300, tabWidth := 285, tabs := ""
 
-setupText := "Import and select the runelite profile that comes with this library. Make sure you have Runelite open and are logged in. Make sure you are in Fixed - Classic layout. Press setup to begin. Your RuneLite will automatically be pulled into focus. If you have more than one RuneLite open, it will choose the most recently active."
+setupText := "Press setup to begin. Your RuneLite will automatically be pulled into focus. If you have more than one RuneLite open, it will choose the most recently active."
 
 hotkeyText := "To set a hotkey, press the GUI button, and then press a button on your keyboard (Space, Tab and Modifiers excluded). Pressing Esc will reset the selection."
 
@@ -26,7 +26,7 @@ Constructor() {
 	myGui.OnEvent('Close', (*) => ExitApp())
 	myGui.BackColor := "E2E2E2"
   
-  tabs := myGui.Add("Tab3", "h220 w" . contentWidth, ["Setup"])
+  tabs := myGui.Add("Tab3", "h190 w" . contentWidth, ["Setup"])
   myGui.Add("Text", "Section h0 w0", "")
 
   ; Setup
@@ -42,7 +42,7 @@ Constructor() {
   ; Hotkey Text
   myGui.Add("Text", "w" . tabWidth, hotkeyText)
   ; Force Close
-  addScript("Force Close Script", ExitApp, 5.3)
+  addScript("Force Close Script", ExitApp, 4)
 
   addExtraTabs() {
     tabs.Add(["Basic","Advanced", "PvP"])

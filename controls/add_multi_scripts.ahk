@@ -24,7 +24,7 @@ addMultiScripts(scripts) {
   editBox.OnEvent("Change", updateEditBoxValue)
   
   ; Desc text
-  descText := myGui.Add("Text", "w225 r8 xs ys+60 Wrap", "")
+  descText := myGui.Add("Text", "w225 r9 xs ys+60 Wrap", "")
 
   clickHandler(*) {
     prevInput := button.Text
