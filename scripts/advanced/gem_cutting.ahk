@@ -23,7 +23,6 @@ gemCutting() {
       Send("{Space}")
     }
     if (tickCount == 60) {
-      randSleep(0,2000)
       tickCount := 0
     }
 

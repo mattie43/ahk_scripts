@@ -40,4 +40,6 @@ imgs := {
   gold_ore: "*TransBlack ..\imgs\gold_ore.png",
   molten_glass: "*TransBlack ..\imgs\molten_glass.png",
   inventory_full_logs: "*50 ..\imgs\inventory_full_logs.png",
+  bank_title: "*50 ..\imgs\bank_title.png",
+  bank_close_btn: "*50 ..\imgs\bank_close_btn.png",
 }
