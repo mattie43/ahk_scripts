@@ -39,4 +39,5 @@ imgs := {
   inventory_full: "*50 ..\imgs\inventory_full.png",
   gold_ore: "*TransBlack ..\imgs\gold_ore.png",
   molten_glass: "*TransBlack ..\imgs\molten_glass.png",
+  inventory_full_logs: "*50 ..\imgs\inventory_full_logs.png",
 }
