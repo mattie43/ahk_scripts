@@ -69,6 +69,11 @@ Here are some points to cover about the program:
 4. <span style="color: #3467eb">This is the screen marker plugin. Some plugins may have you put a screen marker on an item in your bank if it can vary for an individual script.</span> -->
 
 <code style="color: aqua">test</code>
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
 
 ![Lets Begin Text](./readmeimgs/lets_begin_text.png)  
 ![Lets Begin](./readmeimgs/lets_begin.png)
