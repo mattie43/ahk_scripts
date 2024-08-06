@@ -63,15 +63,19 @@ You will need to re-import each time a new script is added that you want to use.
 ## Time to run a script
 Here are some points to cover about the program:
 
+```html
 1. <span style="color: #eb3434">This is how you setup the bot before starting any scripts. This is how the window, game, chat, and inventory positions are set.</span>
 2. <span style="color: yellow">This is where the camera point plugin is. Many scripts will use this to get the correct camera setup.</span>
 3. <span style="color: #2ad135">This is the button to load the specific camera point. "Smithing" in this example.</span>
 4. <span style="color: #3467eb">This is the screen marker plugin. Some plugins may have you put a screen marker on an item in your bank if it can vary for an individual script.</span>
+```
 
 ![Lets Begin](./readmeimgs/lets_begin.png)
 
+```html
 1. <span style="color: #2ad135">There are two types of scripts, Basic and Advanced, seperated by tabs.</span>
 2. <span style="color: #3467eb">This is the hotkey button. After you click on it, it will listen for the next keybord press (exluding Tab and Space). If you press Esc, it will reset the current hotkey. Once a hotkey is set, make sure you are focused on RuneLite, then press your hotkey to toggle starting and stopping your script.</span>
 3. <span style="color: #eb3434">This is the "debug" section. When starting or stopping a script, or an error occuring, it will print out what it can for useful information.</span>
+```
 
 ![Smithing Example](./readmeimgs/smithing_example.png)
