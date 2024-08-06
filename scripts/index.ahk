@@ -20,6 +20,7 @@
 #Include ".\advanced\falconry.ahk"
 #Include ".\advanced\stall_stealer.ahk"
 #Include ".\advanced\smithing.ahk"
+#Include ".\advanced\gem_cutting.ahk"
 ; PvP
 #Include ".\pvp\mage.ahk"
 #Include ".\pvp\range.ahk"
@@ -114,6 +115,11 @@ advancedScripts := [
     name: "Smithing - Gold Ore",
     fn: (*) => smithing(),
     desc: 'Make sure gold ores are visible in your bank. Have "Quantity: All" selected. Make sure "Space" is set to gold bars (your last option) at the furnace. Stand in front of the pink bank booth in Edgeville with a full inventory of gold ores. Then begin this script.'
+  },
+  {
+    name: "Gem Cutting",
+    fn: (*) => gemCutting(),
+    desc: 'Stand west of the marked banker in the GE. Put a chisel in slot one of you inventory. Mark your gems in your bank with a cyan (FF00BEFF) screen marker. Have "Quantity: All" selected. Close your bank interface. Set your camera top down and use the camera point plugin named "Cooking/Stalls". Then begin this script.'
   },
 ]
 

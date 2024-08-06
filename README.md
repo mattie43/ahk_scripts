@@ -35,13 +35,22 @@ You need to create a PATH in your env variables for "AutoHotKey".
 ![Run Batch](./readmeimgs/run_batch.png)
 
 ## Runescape setup
-#### Make sure to have these options selected within Runescape's in-game settings.  
+Make sure to have these options selected within Runescape's in-game settings.
+
 ![Layout](./readmeimgs/layout.png)  
 ![Shift Drop](./readmeimgs/shift_drop.png)  
 ![Brightness](./readmeimgs/brightness.png)  
 ![Disable Level Up](./readmeimgs/disable_level_up.png)  
-![Hide Roofs](./readmeimgs/hide_roofs.png)  
-#### These are optional QOL settings you can also add.  
+![Hide Roofs](./readmeimgs/hide_roofs.png)
+
+These are optional QOL settings you can also add.
+
 ![Ammo Pickup](./readmeimgs/ammo_pickup.png)  
 ![Trade Delay](./readmeimgs/trade_delay.png)  
 ![World Switcher](./readmeimgs/world_switcher.png)
+
+## RuneLite setup
+Import the profile that came inside this repo (runelite-profile.properties)  
+This will be the profile you must use with all scripts.
+
+![Import Profile](./readmeimgs/import_profile.png)
