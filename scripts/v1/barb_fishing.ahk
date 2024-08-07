@@ -11,14 +11,14 @@ barbFishing() {
     }
 
     ; full inv
-    if (findImageIn(&_, &_, imgs.anymore_fish, "chat")) {
+    if (findImageIn(&_, &_, imgs.v1.anymore_fish, "chat")) {
       droppingInv := True
       dropInventory([1,2])
       droppingInv := False
     }
 
     ; not fishing
-    if (findImageIn(&_, &_, imgs.not_fishing, "game")) {
+    if (findImageIn(&_, &_, imgs.v1.not_fishing, "game")) {
       tl := {
         x: window.game.x,
         y: window.game.y

@@ -9,7 +9,7 @@ stallStealer() {
       return
     }
 
-    if (findImageIn(&_, &_, imgs.inventory_full, "chat")) {
+    if (findImageIn(&_, &_, imgs.v1.inventory_full, "chat")) {
       droppingInv := True
       dropInventory()
       return droppingInv := False

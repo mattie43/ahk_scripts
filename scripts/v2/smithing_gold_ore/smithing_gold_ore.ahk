@@ -1,39 +1,29 @@
 #Requires AutoHotkey v2.0
 
-class v2SmithingGoldOreClass {
+class v2SmithingGoldOreClass extends v2Helpers {
   name := "Smithing - Gold Ore"
-	setup_img := ".\smithing_gold_ore\setup.png"
-  setup_text := ""
-  gold_ore := "*TransBlack ..\imgs\v2\gold_ore.png"
-  smithing_select := "*50 ..\imgs\v2\smithing_select.png"
-  step := ""
-  tickCount := 0
-  stepCount := 0
-  errorCount := 0
+	setup_img := "..\scripts\v2\smithing_gold_ore\setup.png"
+  setup_text := "Set your camera top down.\nSelect the 'Smithing' camera point.\nStand in front of the bank.\nMake sure 'Quantity: All' is selected in the bank, then begin."
+  gold_ore := "*TransBlack ..\scripts\v2\smithing_gold_ore\gold_ore.png"
+  smithing_select := "*50 ..\scripts\v2\smithing_gold_ore\smithing_select.png"
 
   smith() {
     ; click furnace
     if (this.stepCount == 0) {
-      if not clickColorIn(colors.orange, "game") {
-        debug("lf orange..")
-      } else {
+      if clickColorIn(colors.orange, "game") {
         this.incStepCount()
       }
     }
     ; wait for smelt chat option
     if (this.stepCount == 1) {
-      if not findImageIn(&_, &_, this.smithing_select, "chat") {
-        debug("lf chat img..")
-      } else {
+      if findImageIn(&_, &_, this.smithing_select, "chat") {
         Send("{6}")
         this.incStepCount()
       }
     }
     ; wait for inv finished
     if (this.stepCount == 2) {
-      if findImageIn(&_, &_, this.gold_ore, "inventory") {
-        debug("lf inv done..")
-      } else {
+      if not findImageIn(&_, &_, this.gold_ore, "inventory") {
         this.setStep("bank")
       }
     }
@@ -42,17 +32,13 @@ class v2SmithingGoldOreClass {
   bank() {
     ; click bank
     if (this.stepCount == 0) {
-      if not clickColorIn(colors.pink, "game") {
-        debug("lf pink..")
-      } else {
+      if clickColorIn(colors.pink, "game") {
         this.incStepCount()
       }
     }
     ; wait for gold ore in bank window
     if (this.stepCount == 1) {
-      if not findImageIn(&x, &y, this.gold_ore, "game") {
-        debug("lf gold ore..")
-      } else {
+      if findImageIn(&x, &y, this.gold_ore, "game") {
         this.incStepCount()
       }
     }
@@ -79,41 +65,11 @@ class v2SmithingGoldOreClass {
     }
   }
 
-  skip() {
-    return
-  }
-
-  setSkip() {
-    this.step := "skip"
-  }
-
-  incStepCount() {
-    this.stepCount += 1
-  }
-
-  setStep(step) {
-    this.errorCount := 0
-    this.tickCount := 0
-    this.stepCount := 0
-    this.step := step
-  }
-
-  throwError() {
-    debug("Failed on step " . this.step . ", stopping..")
-    return stopLooping()
-  }
-
-  callback() {
-    this.%this.step%()
-    this.errorCount += 1
-    if (this.errorCount > 200) {
-      this.throwError()
-    }
-  }
-
   run() {
     this.setStep("start")
-    listenToColorChange(() => this.callback(), "smithing v2")
+    listenToColorChange((*) => 
+      this.%this.step%()
+      this.errorCheck(), this.name)
   }
 }
 

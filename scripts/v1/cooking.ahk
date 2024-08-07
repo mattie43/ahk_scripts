@@ -23,7 +23,7 @@ cooking() {
     if (tickCount == 5) {
       Send("{Space}")
     }
-    if (tickCount > 12 AND findImageIn(&_, &_, imgs.not_cooking, "game")) {
+    if (tickCount > 12 AND findImageIn(&_, &_, imgs.v1.not_cooking, "game")) {
       rand := Random(1,5)
       debug('rand: ' . rand) 
       if (rand == 1) {

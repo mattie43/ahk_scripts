@@ -10,7 +10,7 @@ glassBlowing() {
     if (tickCount == 2) {
       clickInventory(2)
       randSleep(120,150)
-      if not clickImageIn(imgs.molten_glass, "game", 3, 3, 4) {
+      if not clickImageIn(imgs.v1.molten_glass, "game", 3, 3, 4) {
         debug("Can not find molten glass, stopping..")
         return stopLooping()
       }

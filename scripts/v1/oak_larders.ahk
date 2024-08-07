@@ -30,7 +30,7 @@ oakLarders() {
       Send("1")
     }
     if (tickCount > 10) {
-      if ImageSearch(&x, &y, window.chat.x, window.chat.y, window.chat.x + window.chat.width, window.h, imgs.demon_butler_retrieve) {
+      if ImageSearch(&x, &y, window.chat.x, window.chat.y, window.chat.x + window.chat.width, window.h, imgs.v1.demon_butler_retrieve) {
         tickCount := 0
       }
     }

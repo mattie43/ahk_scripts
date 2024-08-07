@@ -12,7 +12,7 @@ woodcutting() {
   callback() {
     if (droppingInv) {
       return
-    } else if ImageSearch(&_, &_, tlChat.x, tlChat.y, brChat.x, brChat.y, imgs.inventory_full_logs) AND !dropPrevention {
+    } else if ImageSearch(&_, &_, tlChat.x, tlChat.y, brChat.x, brChat.y, imgs.v1.inventory_full_logs) AND !dropPrevention {
       droppingInv := True
       dropPrevention := True
       randSleep(100,5000)

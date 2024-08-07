@@ -7,28 +7,28 @@ nmzAbsorption() {
   clickPot() {
     rand := Random(6,10)
     
-    if (findImageIn(&x, &y, imgs.absorption_1, "inventory")) {
+    if (findImageIn(&x, &y, imgs.v1.absorption_1, "inventory")) {
       MouseMove(x + rand, y + rand)
       randSleep(90,120)
       Click()
       return
     }
   
-    if (findImageIn(&x, &y, imgs.absorption_2, "inventory")) {
+    if (findImageIn(&x, &y, imgs.v1.absorption_2, "inventory")) {
       MouseMove(x + rand, y + rand)
       randSleep(90,120)
       Click()
       return
     }
   
-    if (findImageIn(&x, &y, imgs.absorption_3, "inventory")) {
+    if (findImageIn(&x, &y, imgs.v1.absorption_3, "inventory")) {
       MouseMove(x + rand, y + rand)
       randSleep(90,120)
       Click()
       return
     }
 
-    if (findImageIn(&x, &y, imgs.absorption_4, "inventory")) {
+    if (findImageIn(&x, &y, imgs.v1.absorption_4, "inventory")) {
       MouseMove(x + rand, y + rand)
       randSleep(90,120)
       Click()
@@ -38,7 +38,7 @@ nmzAbsorption() {
 
   clickPrayerOrb() {
     rand := Random(1,8)
-    if ImageSearch(&x, &y, 0, 0, 900, 900, imgs.minimap_prayer) {
+    if ImageSearch(&x, &y, 0, 0, 900, 900, imgs.v1.minimap_prayer) {
       doubleClick(x + rand, y + rand)
     }
   }

@@ -24,7 +24,7 @@ smithing() {
     ; Deposit all, take out ores, close Bank
     if (tickCount == furnaceSleep + 18) {
       depositAll()
-      if findImageIn(&x, &y, imgs.gold_ore, "game") {
+      if findImageIn(&x, &y, imgs.v1.gold_ore, "game") {
         singleClick(x + 3, y + 3, 5)
       } else {
         debug("Can not find gold ore in bank..")

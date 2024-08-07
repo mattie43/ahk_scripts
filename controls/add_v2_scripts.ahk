@@ -76,19 +76,15 @@ addV2Scripts() {
       }
     }
 
-    MsgBox(foundItem.setup_img)
-
-    
-    SetWorkingDir("..\scripts\v2")
-
     setupGui := Gui()
     setupGui.Title := "Setup"
     setupGui.OnEvent('Close', (*) => setupGui.Destroy())
     setupGui.BackColor := "E2E2E2"
     setupGui.Add("Picture", "", foundItem.setup_img)
-    setupGui.Add("Text", "", foundItem.setup_text)
+    sText := StrSplit(foundItem.setup_text, "\n")
+    for ind, text in sText {
+      setupGui.Add("Text", "", ind . ": " . text)
+    }
     setupGui.Show("w1055")
-    
-    SetWorkingDir(A_InitialWorkingDir)
   }
 }

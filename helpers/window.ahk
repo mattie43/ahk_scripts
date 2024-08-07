@@ -3,7 +3,7 @@
 ; Window setters
 window := {}
 window.game := {
-	src: windowImgs.game,
+	src: imgs.window.game,
 	height: 336,
 	width: 514,
 	x: -1,
@@ -24,7 +24,7 @@ window.bank := {
   },
 }
 window.inventory := {
-	src: windowImgs.inventory,
+	src: imgs.window.inventory,
 	height: 261,
 	width: 236,
 	x: -1,
@@ -32,14 +32,14 @@ window.inventory := {
   slots: []
 }
 window.chat := {
-	src: windowImgs.chat,
+	src: imgs.window.chat,
 	height: 141,
 	width: 518,
 	x: -1,
 	y: -1
 }
 window.tick_counter := {
-	src: windowImgs.tick_counter,
+	src: imgs.window.tick_counter,
 	height: 19,
 	width: 19,
 	x: -1,
