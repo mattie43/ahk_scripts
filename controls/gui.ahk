@@ -5,6 +5,7 @@
 #Include ".\add_script.ahk"
 #Include ".\add_multi_scripts.ahk"
 #Include ".\debug_box.ahk"
+#Include ".\add_v2_scripts.ahk"
 
 global myGui, ih := InputHook("L1"), currInputs := [], maxWidth := 320, contentWidth := 300, tabWidth := 285, tabs := ""
 
@@ -32,7 +33,7 @@ Constructor() {
   ; Setup
   tabs.UseTab(1)
   myGui.Add("Text", "xs ys w" . tabWidth, setupText)
-  setupButton := myGui.Add("Button", "w55", "Setup")
+  setupButton := myGui.Add("Button", "w95", "Setup Runelite")
   setupButton.OnEvent("Click", (*) =>
     setup()
     debug("Setup complete..")
@@ -45,18 +46,22 @@ Constructor() {
   addScript("Force Close Script", ExitApp, 4)
 
   addExtraTabs() {
-    tabs.Add(["Basic","Advanced", "PvP"])
+    tabs.Add(["Basic","v1", "v2", "PvP"])
 
     ; Basic Scripts
     tabs.UseTab(2)
     addMultiScripts(basicScripts)
     
-    ; Advanced Scripts
+    ; v1 Scripts
     tabs.UseTab(3)
-    addMultiScripts(advancedScripts)
+    addMultiScripts(v1Scripts)
+    
+    ; v2 Scripts
+    tabs.UseTab(4)
+    addV2Scripts()
   
     ; PvP Scripts
-    tabs.UseTab(4)
+    tabs.UseTab(5)
     myGui.Add("Text", "cRed w" . tabWidth, "THESE ARE WIP")
     for ind, script in pvpScripts {
       addScript(script.name, script.fn, ind)

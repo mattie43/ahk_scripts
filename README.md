@@ -70,7 +70,7 @@ Here are some points to cover about the program:
 
 ![Lets Begin](./readmeimgs/lets_begin.png)
 
-1. There are two types of scripts highlighted in green, Basic and Advanced, seperated by tabs.
+1. There are two types of scripts highlighted in green, Basic and v1, seperated by tabs.
 2. In blue is the hotkey button. After you click on it, it will listen for the next keybord press (exluding Tab and Space). If you press Esc, it will reset the current hotkey. Once a hotkey is set, make sure you are focused on RuneLite, then press your hotkey to toggle starting and stopping your script.
 3. In red is the "debug" section. When starting or stopping a script, or an error occuring, it will print out what it can for useful information.
 

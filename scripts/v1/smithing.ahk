@@ -9,7 +9,9 @@ smithing() {
     if (tickCount == 1) {
       ; randomize furnace sleeping, 144 min
       furnaceSleep := Random(144,149)
-      clickColorIn(colors.orange, "game", 4)
+      if not clickColorIn(colors.orange, "game", 4) {
+        debug("cant find furnace")
+      }
     }
     ; Start gold bars
     if (tickCount == 10) {
