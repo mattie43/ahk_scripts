@@ -153,6 +153,7 @@ listenToColorChange(callback, name := "") {
     if (name) {
       debug("Starting " . name . "..")
     }
+    activateRunelite()
     isLooping := True
   }
 	
