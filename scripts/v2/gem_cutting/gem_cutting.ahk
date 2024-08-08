@@ -13,13 +13,20 @@ class GemCuttingClass extends v2Helpers {
 	super_energy := "*20 ..\scripts\v2\gem_cutting\super_energy.png"
   imgs_arr := [this.uncut_sapphire, this.uncut_emerald, this.uncut_ruby, this.uncut_diamond, this.uncut_dragonstone, this.super_energy]
 
+  checkImage() {
+    for ind, img in this.imgs_arr {
+      if findImageIn(&_, &_, img, "inventory") {
+        return True
+      }
+    }
+    return False
+  }
+
   cut() {
     switch (this.stepCount) {
       case 0:
-        for ind, img in this.imgs_arr {
-          if findImageIn(&_, &_, img, "inventory") {
-            this.incStepCount()
-          }
+        if this.checkImage() {
+          this.incStepCount()
         }
       case 1:
         clickInventory(1)
@@ -32,12 +39,9 @@ class GemCuttingClass extends v2Helpers {
           this.incStepCount()
         }
       case 3:
-        for ind, img in this.imgs_arr {
-          if findImageIn(&_, &_, img, "inventory") {
-            return
-          }
+        if not this.checkImage() {
+          this.setStep("click_bank")
         }
-        this.setStep("click_bank")
     }
   }
 
