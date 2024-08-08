@@ -34,7 +34,6 @@ class GemCuttingClass extends v2Helpers {
       case 3:
         for ind, img in this.imgs_arr {
           if findImageIn(&_, &_, img, "inventory") {
-            debug("found inv: " . ind)
             return
           }
         }
