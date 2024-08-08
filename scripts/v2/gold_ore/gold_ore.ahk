@@ -64,13 +64,6 @@ class GoldOreClass extends v2Helpers {
       this.setStep("bank")
     }
   }
-
-  run() {
-    this.setStep("start")
-    listenToColorChange((*) => 
-      this.%this.step%()
-      this.errorCheck(), this.name)
-  }
 }
 
 gold_ore := GoldOreClass()

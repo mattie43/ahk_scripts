@@ -19,20 +19,12 @@ class v2TemplateClass extends v2Helpers {
   /*
     Place your functions here using the same name as your step. Similar to the start step below.
     The v2Helpers class is what contains all the re-used variables and functions.
-    `this.run()` will run on every game tick. Utilize `this.step: string`, `this.stepCount: number`,
-    and `this.tickCount: number` to change what the bot does.
+    The `start` step will be the step called on each game tick until `this.step` is changed.
+    Use `this.setStep("next_step_name")` to set a new step and reset the counts.
   */
 
   start() {
-    ; Starting step.
-  }
-
-  ; You should not need to alter this fn.
-  run() {
-    this.setStep("start")
-    listenToColorChange((*) => 
-      this.%this.step%()
-      this.errorCheck(), this.name)
+    ; First step called on `this.run()`
   }
 }
 

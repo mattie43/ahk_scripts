@@ -29,7 +29,7 @@ class v2Helpers {
     this.step := step
   }
 
-  errorCheck() {    
+  errorCheck() {
     this.errorCount += 1
     if (this.errorCount > 200) {
       this.throwError()
@@ -39,5 +39,12 @@ class v2Helpers {
   throwError() {
     debug("Failed on step " . this.step . ", stopping..")
     return stopLooping()
+  }
+
+  run() {
+    this.setStep("start")
+    listenToColorChange((*) => 
+      this.%this.step%()
+      this.errorCheck(), this.name)
   }
 }

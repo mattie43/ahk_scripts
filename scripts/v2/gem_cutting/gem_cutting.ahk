@@ -67,13 +67,6 @@ class GemCuttingClass extends v2Helpers {
       this.setStep("click_bank")
     }
   }
-
-  run() {
-    this.setStep("start")
-    listenToColorChange((*) => 
-      this.%this.step%()
-      this.errorCheck(), this.name)
-  }
 }
 
 gem_cutting := GemCuttingClass()
