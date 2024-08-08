@@ -97,6 +97,10 @@ depositAll() {
   singleClick(window.bank.deposit.x, window.bank.deposit.y, 7)
 }
 
+bankSlotOne() {
+  singleClick(window.bank.slot_one.x, window.bank.slot_one.y, 7)
+}
+
 singleClick(x := -1, y:= -1, rand := 0) {
   if (x < 1 OR y < 1) {
     return

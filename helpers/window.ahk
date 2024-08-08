@@ -22,6 +22,10 @@ window.bank := {
     x: -1,
     y: -1
   },
+  slot_one: {
+    x: -1,
+    y: -1
+  },
 }
 window.inventory := {
 	src: imgs.window.inventory,
@@ -167,6 +171,8 @@ setBankCoords() {
   window.bank.deposit.y := startingY + 307
   window.bank.close.x := startingX + 483
   window.bank.close.y := startingY + 19
+  window.bank.slot_one.x := startingX + 89
+  window.bank.slot_one.y := startingY + 95
 }
 
 setPlayerCoords() {

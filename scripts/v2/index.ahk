@@ -1,8 +1,10 @@
 #Requires AutoHotkey v2.0
 
 #Include ".\v2Helpers.ahk"
-#Include ".\smithing_gold_ore\smithing_gold_ore.ahk"
+#Include ".\gold_ore\gold_ore.ahk"
+#Include ".\gem_cutting\gem_cutting.ahk"
 
 v2Scripts := [
-  v2SmithingGoldOre
+  gold_ore,
+  gem_cutting
 ]

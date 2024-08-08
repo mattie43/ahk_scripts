@@ -7,7 +7,9 @@ imgs.window := {
   game: "*TransBlack ..\imgs\window\game.png",
   inventory: "*70 *TransBlack ..\imgs\window\inventory.png",
   chat: "*TransBlack ..\imgs\window\chat.png",
-  tick_counter: "..\imgs\window\tick_counter.png"
+  tick_counter: "..\imgs\window\tick_counter.png",
+  bank_title: "*50 ..\imgs\window\bank_title.png",
+  bank_close_btn: "*50 ..\imgs\window\bank_close_btn.png",
 }
 
 /*
@@ -44,6 +46,4 @@ imgs.v1 := {
   gold_ore: "*TransBlack ..\imgs\v1\gold_ore.png",
   molten_glass: "*TransBlack ..\imgs\v1\molten_glass.png",
   inventory_full_logs: "*50 ..\imgs\v1\inventory_full_logs.png",
-  bank_title: "*50 ..\imgs\v1\bank_title.png",
-  bank_close_btn: "*50 ..\imgs\v1\bank_close_btn.png",
 }
