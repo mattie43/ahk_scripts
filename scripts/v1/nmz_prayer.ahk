@@ -48,5 +48,5 @@ nmzPrayer() {
     }
   }
 
-  listenToColorChange(callback)
+  listenToColorChange(callback, "nmz - prayer")
 }
