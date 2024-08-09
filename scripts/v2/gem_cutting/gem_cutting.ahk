@@ -50,7 +50,7 @@ class GemCuttingClass extends v2Helpers {
       this.setSkip()
       clickInventory(2)
       randSleep(200,250)
-      bankSlotOne()
+      clickBankSlot(1)
       randSleep(200,250)
       Send("{Esc}")
       randSleep(200,250)

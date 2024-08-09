@@ -3,24 +3,26 @@
 woodcutting() {
   prevColorCoords := { x: -1, y: -1 }
   droppingInv := False
-  dropPrevention := False
   tl := { x: window.game.x, y: window.game.y }
   br := { x: tl.x + window.game.width, y: tl.y + window.game.height }
   tlChat := { x: 12, y: 465 }
   brChat := { x: 316, y: 487 }
+  tickCount := 0
 
   callback() {
     if (droppingInv) {
       return
-    } else if ImageSearch(&_, &_, tlChat.x, tlChat.y, brChat.x, brChat.y, imgs.v1.inventory_full_logs) AND !dropPrevention {
+    }
+    if (tickCount > 75) {
       droppingInv := True
-      dropPrevention := True
-      randSleep(100,5000)
+      tickCount := 0
+      randSleep(100,2000)
       dropInventory([1])
       prevColorCoords := { x: -1, y: -1 }
       droppingInv := False
-      SetTimer((*) => dropPrevention := False, -5000)
     }
+
+    tickCount += 1
 
     if not getColorTopLeft(&cx, &cy, tl, br, colors.pink) {
       return

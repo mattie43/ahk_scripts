@@ -97,10 +97,6 @@ depositAll() {
   singleClick(window.bank.deposit.x, window.bank.deposit.y, 7)
 }
 
-bankSlotOne() {
-  singleClick(window.bank.slot_one.x, window.bank.slot_one.y, 7)
-}
-
 singleClick(x := -1, y:= -1, rand := 0) {
   if (x < 1 OR y < 1) {
     return
@@ -199,6 +195,15 @@ clickInventory(num) {
   x := window.inventory.slots[num].x
   y := window.inventory.slots[num].y
   singleClick(x, y, 5)
+}
+
+/*
+  Only covers bank slots 1 and 2 atm.
+*/
+clickBankSlot(num) {
+  x := window.bank.slots[num].x
+  y := window.bank.slots[num].y
+  singleClick(x, y, 7)
 }
 
 playerInTile(color, altHeight := 0) {
