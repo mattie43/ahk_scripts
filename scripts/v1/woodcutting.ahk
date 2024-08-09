@@ -13,13 +13,16 @@ woodcutting() {
     if (droppingInv) {
       return
     }
-    if (tickCount > 75) {
-      droppingInv := True
-      tickCount := 0
-      randSleep(100,2000)
-      dropInventory([1])
-      prevColorCoords := { x: -1, y: -1 }
-      droppingInv := False
+    if (tickCount > 90) {
+      rand := Random(1,3)
+      if (rand == 1) {
+        droppingInv := True
+        tickCount := 0
+        randSleep(100,2000)
+        dropInventory([1])
+        prevColorCoords := { x: -1, y: -1 }
+        droppingInv := False
+      }
     }
 
     tickCount += 1

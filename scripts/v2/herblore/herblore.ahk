@@ -1,7 +1,7 @@
 #Requires AutoHotkey v2.0
 
 class HerbloreClass extends v2Helpers {
-  name := ""
+  name := "Herblore x14"
 	setup_img := "..\scripts\v2\[FOLDER_NAME]\setup.png"
   setup_text := "Stand next to any banker/booth marked pink (FFFF00FF).\nSet camera top down.\nSet camera point to 'Bank'.\nPut your unf. pot and secondary ingredient in the first and second slot of any bank tab.\nSet 'Quantity: X' to 14 in bank.\nBegin script."
 	how_many := "*50 ..\scripts\v2\gem_cutting\how_many.png"
@@ -15,7 +15,6 @@ class HerbloreClass extends v2Helpers {
         clickInventory(13)
         randSleep(90,130)
         clickInventory(17)
-        randSleep(90,130)
         this.incStepCount()
       case 2:
         if findImageIn(&_, &_, this.how_many, "chat") {
@@ -23,10 +22,10 @@ class HerbloreClass extends v2Helpers {
           this.incStepCount()
         }
       case 3:
-      this.incTickCount()
-      if (this.tickCount > 30) {
-        this.setStep("click_bank")
-      }
+        this.incTickCount()
+        if (this.tickCount > 30) {
+          this.setStep("click_bank")
+        }
     }
   }
 
@@ -52,11 +51,14 @@ class HerbloreClass extends v2Helpers {
   }
 
   start() {
-    if findImageIn(&_, &_, imgs.window.bank_close_btn, "game") {
-      this.setStep("bank")
-    } else {
-      this.setStep("click_bank")
-    }
+    x := window.bank.slots[1].x
+    y := window.bank.slots[1].y
+    MouseMove(x,y)
+    ; if findImageIn(&_, &_, imgs.window.bank_close_btn, "game") {
+    ;   this.setStep("bank")
+    ; } else {
+    ;   this.setStep("click_bank")
+    ; }
   }
 }
 
