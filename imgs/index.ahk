@@ -10,6 +10,7 @@ imgs.window := {
   tick_counter: "..\imgs\window\tick_counter.png",
   bank_title: "*50 ..\imgs\window\bank_title.png",
   bank_close_btn: "*50 ..\imgs\window\bank_close_btn.png",
+  empty_inv_28: "*20 ..\imgs\window\empty_inv_28.png",
 }
 
 /*

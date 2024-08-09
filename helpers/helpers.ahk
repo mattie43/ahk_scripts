@@ -206,6 +206,12 @@ clickBankSlot(num) {
   singleClick(x, y, 7)
 }
 
+lastInvSlotEmpty() {
+  x := window.inventory.slots[28].x - 8
+  y := window.inventory.slots[28].y - 4
+  return ImageSearch(&_, &_, x, y, x + 20, y + 17, imgs.window.empty_inv_28)
+}
+
 playerInTile(color, altHeight := 0) {
   px := window.player.x
   py := window.player.y
