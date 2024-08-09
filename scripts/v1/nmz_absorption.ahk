@@ -51,9 +51,9 @@ nmzAbsorption() {
       firstRun := False
     }
     
-    if (tickCount > 75) {
+    if (tickCount > 70) {
       rand := Random(1,10)
-      if (rand == 1 OR tickCount > 90) {
+      if (rand == 1 OR tickCount > 80) {
         tickCount := 0
         clickPrayerOrb()
         randSleep(100,130)
