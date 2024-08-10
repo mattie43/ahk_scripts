@@ -3,6 +3,7 @@
 nmzAbsorption() {
   tickCount := 0
   firstRun := True
+  sentMsg := False
 
   clickPot() {
     rand := Random(6,10)
@@ -34,8 +35,11 @@ nmzAbsorption() {
       Click()
       return
     }
-
-    SendMsgToDiscord("no more absorptions.")
+    
+    if (!sentMsg) {
+      sentMsg := True
+      SendMsgToDiscord("No more absorptions left..")
+    }
   }
 
   clickPrayerOrb() {
