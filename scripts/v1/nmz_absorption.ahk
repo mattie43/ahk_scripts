@@ -34,6 +34,8 @@ nmzAbsorption() {
       Click()
       return
     }
+
+    SendMsgToDiscord("no more absorptions.")
   }
 
   clickPrayerOrb() {

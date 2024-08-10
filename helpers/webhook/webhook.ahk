@@ -1,12 +1,12 @@
 #Requires AutoHotkey v2.0
 
 SendMsgToDiscord(msg){
-  url := FileRead("webhook.txt")
+  url := FileRead("..\helpers\webhook\webhook.txt")
 
-  if not (url) OR not (msg) {
+  if (!url) OR (!msg) {
     return
   }
 
-  RunWait("webhook.bat " . url . " " . msg)
+  RunWait("..\helpers\webhook\webhook.bat " . url . ' "' . msg . '"')
   activateRunelite()
 }
