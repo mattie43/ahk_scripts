@@ -40,6 +40,16 @@ nmzAbsorption() {
       sentMsg := True
       SendMsgToDiscord("No more absorptions left..")
     }
+    
+    if (!findImageIn(&_, &_, imgs.v1.absorption_check, "game")) {
+      SendMsgToDiscord("You have left NMZ..")
+      logout()
+    }
+
+    if (amIDisconnected()) {
+      SendMsgToDiscord("You have disconnected..")
+      stopLooping()
+    }
   }
 
   clickPrayerOrb() {

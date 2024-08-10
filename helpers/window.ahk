@@ -77,6 +77,10 @@ window.tabs.magic := {
 	x: -1,
 	y: -1
 }
+window.tabs.logout := {
+	x: -1,
+	y: -1
+}
 
 setRunelite() {
   SetTitleMatchMode(2)
@@ -144,6 +148,9 @@ setTabsCoords() {
 	
 	window.tabs.magic.x := startingX + 199
 	window.tabs.magic.y := startingY
+
+	window.tabs.logout.x := startingX + 99
+	window.tabs.logout.y := startingY + 299
 }
 
 setInvSlotsCoords() {

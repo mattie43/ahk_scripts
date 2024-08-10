@@ -48,4 +48,5 @@ imgs.v1 := {
   gold_ore: "*TransBlack ..\imgs\v1\gold_ore.png",
   molten_glass: "*TransBlack ..\imgs\v1\molten_glass.png",
   inventory_full_logs: "*50 ..\imgs\v1\inventory_full_logs.png",
+  absorption_check: "*TransBlack *50 ..\imgs\v1\absorption_check.png",
 }
