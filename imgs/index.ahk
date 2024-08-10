@@ -11,7 +11,7 @@ imgs.window := {
   bank_title: "*50 ..\imgs\window\bank_title.png",
   bank_close_btn: "*50 ..\imgs\window\bank_close_btn.png",
   empty_inv_28: "*20 ..\imgs\window\empty_inv_28.png",
-  disconnected: "*20 ..\imgs\window\disconnected.png",
+  disconnected: "*TransBlack ..\imgs\window\disconnected.png",
 }
 
 /*

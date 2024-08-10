@@ -235,7 +235,7 @@ amIDisconnected() {
     y: window.y + window.h
   }
 
-  return ImageSearch(&_, &_, tl.x, tl.y, br.x, br.y, imgs.window.disconnected)
+  return ImageSearch(&_, &_, 0, 0, 550, 300, imgs.window.disconnected)
 }
 
 stopLooping() {  
