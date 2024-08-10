@@ -224,6 +224,20 @@ playerInTile(color, altHeight := 0) {
   return False
 }
 
+amIDisconnected() {
+  tl := {
+    x: window.x,
+    y: window.y
+  }
+
+  br := {
+    x: window.x + window.w,
+    y: window.y + window.h
+  }
+
+  return ImageSearch(&_, &_, tl.x, tl.y, br.x, br.y, imgs.window.disconnected)
+}
+
 stopLooping() {  
   global isLooping
 
