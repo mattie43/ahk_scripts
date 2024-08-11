@@ -27,7 +27,7 @@ woodcutting() {
     if (cy == prevColorCoords.y) {
       return
     } else {
-      rand := Random(10,40)
+      rand := Random(20,40)
       singleClick(cx + rand, cy + rand)
       prevColorCoords.x := cx
       prevColorCoords.y := cy
