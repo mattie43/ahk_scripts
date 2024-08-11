@@ -1,9 +1,9 @@
 #Requires AutoHotkey v2.0
 
 class GemCuttingClass extends v2Helpers {
-  name := "Gem Cutting/Stamina Potions"
+  name := "Gem Cut/Stams/Glass"
 	setup_img := "..\scripts\v2\gem_cutting\setup.png"
-  setup_text := "Stand next to any banker/booth marked pink (FFFF00FF).\nSet camera top down.\nSet camera point to 'Bank'.\nPut your uncut gem/super energy(4) in the first slot of any bank tab. (Only works on Sapphire through Dragonstone gems)\nSet 'Quantity: All' in bank.\nPut your chisel/amalyse crystals in slot one of your inventory.\nBegin script."
+  setup_text := "Stand next to any banker/booth marked pink (FFFF00FF).\nSet camera top down.\nSet camera point to 'Bank'.\nPut your gem/super energy(4)/glass in the first slot of any bank tab. (Only works on Sapphire through Dragonstone gems)\nSet 'Quantity: All' in bank.\nPut your chisel/crystals/pipe in slot one of your inventory.\nBegin script."
 	how_many := "*50 ..\scripts\v2\gem_cutting\how_many.png"
 	uncut_sapphire := "*20 ..\scripts\v2\gem_cutting\uncut_sapphire.png"
 	uncut_emerald := "*20 ..\scripts\v2\gem_cutting\uncut_emerald.png"
@@ -11,7 +11,8 @@ class GemCuttingClass extends v2Helpers {
 	uncut_diamond := "*20 ..\scripts\v2\gem_cutting\uncut_diamond.png"
 	uncut_dragonstone := "*20 ..\scripts\v2\gem_cutting\uncut_dragonstone.png"
 	super_energy := "*20 ..\scripts\v2\gem_cutting\super_energy.png"
-  imgs_arr := [this.uncut_sapphire, this.uncut_emerald, this.uncut_ruby, this.uncut_diamond, this.uncut_dragonstone, this.super_energy]
+	molten_glass := "*20 ..\scripts\v2\gem_cutting\molten_glass.png"
+  imgs_arr := [this.uncut_sapphire, this.uncut_emerald, this.uncut_ruby, this.uncut_diamond, this.uncut_dragonstone, this.super_energy, this.molten_glass]
 
   checkImage() {
     for ind, img in this.imgs_arr {
