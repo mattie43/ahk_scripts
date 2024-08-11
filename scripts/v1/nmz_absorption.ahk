@@ -4,6 +4,7 @@ nmzAbsorption() {
   tickCount := 0
   firstRun := True
   sentMsg := False
+  name := "nmz - absorption"
 
   clickPot() {
     rand := Random(6,10)
@@ -43,7 +44,7 @@ nmzAbsorption() {
     
     if (!findImageIn(&_, &_, imgs.v1.absorption_check, "game")) {
       SendMsgToDiscord("You have left NMZ..")
-      logout()
+      logout(name)
     }
 
     if (amIDisconnected()) {
@@ -80,5 +81,5 @@ nmzAbsorption() {
     tickCount += 1
   }
 
-  listenToColorChange(callback, "nmz - absorption")
+  listenToColorChange(callback, name)
 }

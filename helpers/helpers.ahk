@@ -238,8 +238,8 @@ amIDisconnected() {
   return ImageSearch(&_, &_, tl.x, tl.y, br.x, br.y, imgs.window.disconnected)
 }
 
-logout() {
-  stopLooping()
+logout(name := "") {
+  stopLooping(name)
 
 	closeX := 730
 	closeY := 244
@@ -254,8 +254,12 @@ logout() {
   singleClick(logoutX, logoutY, 5)
 }
 
-stopLooping() {  
+stopLooping(name := "") {  
   global isLooping
+
+  if (name) {
+    debug("Stopping " . name . "..")
+  }
 
   isLooping := False
 }
