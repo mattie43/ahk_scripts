@@ -4,16 +4,64 @@ class AstralsClass extends v2Helpers {
   name := "RC - Astrals (incomplete)"
 	setup_img := "..\scripts\v2\astrals\setup.png"
   setup_text := "Line one.\nLine two."
+  shouldDrink := False
+
+  clickPortal() {
+    if clickColorIn(colors.off_cyan, "game") {
+      this.setStep("click_bank")
+    }
+  }
+    
+  in_house() {
+    if not findColorIn(&_, &_, colors.orange, "game") {
+      return
+    }
+
+    if (this.shouldDrink) {
+      if clickColorIn(colors.orange, "game") {
+        this.setSkip()
+        this.shouldDrink := False
+        randSleep(4500,5500)
+        this.clickPortal()
+      }
+    } else {
+      this.shouldDrink := True
+      this.clickPortal()
+    }
+  }
+
+  teleport() {
+    if lastInvSlotEmpty() {
+      this.setSkip()
+      clickInventory(1)
+      this.setStep("in_house")
+    }
+  }
+
+  click_altar() {
+    if (this.tickCount > 0) {
+      this.incTickCount()
+      if (this.tickCount > 1) {
+        if clickColorIn(colors.pink, "game") {
+          this.setStep("teleport")
+        }
+      }
+    }
+
+    if findColorIn(&_, &_, colors.pink, "game") {
+      this.incTickCount()
+    }
+  }
 
   run_to_altar() {
     ; 700,146
     this.incTickCount()
     if (Mod(this.tickCount, 2) == 0) {
       singleClick(700, 146, 1)
+      debug(this.tickCount)
     }
-    if (this.tickCount > 30) {
-      ; this.resetTickCount()
-      ; go to next step
+    if (this.tickCount > 38) {
+      this.setStep("click_altar")
     }
   }
 
