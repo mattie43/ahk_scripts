@@ -266,14 +266,7 @@ stopLooping(name := "") {
 
 ; Not the best implementation, but works for now.
 holdSpace() {
-  fn() {
-    Send("{Space}")
-    if (!isLooping) {
-      SetTimer(,0)
-    }
-  }
-
-  SetTimer(fn)
+  Run("..\helpers\hold_space.ahk " . isLooping)
 }
 
 /*
