@@ -9,9 +9,7 @@ clickXTicks() {
     return MsgBox("Only select one number. Can not read number from given text: " . basicEditBox)
   }
 
-  tickCount := 0  
-
-  holdSpace()
+  tickCount := 0
 
   callback() {
     if (tickCount == 1) {
