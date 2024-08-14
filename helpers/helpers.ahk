@@ -264,6 +264,18 @@ stopLooping(name := "") {
   isLooping := False
 }
 
+; Not the best implementation, but works for now.
+holdSpace() {
+  fn() {
+    Send("{Space}")
+    if (!isLooping) {
+      SetTimer(,0)
+    }
+  }
+
+  SetTimer(fn)
+}
+
 /*
 #HotIf WinActive("YourWindowTitle")
 ~Esc::x := y

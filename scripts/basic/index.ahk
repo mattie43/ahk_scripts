@@ -6,6 +6,7 @@
 #Include ".\click_x_ticks.ahk"
 #Include ".\fletch_darts.ahk"
 #Include ".\ocr_test.ahk"
+#Include ".\enchant_bolts.ahk"
 
 basicScripts := [
   {
@@ -37,5 +38,10 @@ basicScripts := [
     name: "OCR Testing",
     fn: (*) => ocrTest(),
     desc: 'Tool for developing.'
+  },
+  {
+    name: "Enchant Bolts",
+    fn: (*) => enchantBolts(),
+    desc: 'Have the bolts and runes req. in your inventory that you want to one tick enchant. Place your mouse on "Crossbow Bolt Enchantemnts" spell and begin this script.'
   },
 ]

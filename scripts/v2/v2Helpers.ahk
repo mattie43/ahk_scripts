@@ -43,8 +43,10 @@ class v2Helpers {
 
   run() {
     this.setStep("start")
-    listenToColorChange((*) => 
+    fn() {
       this.%this.step%()
-      this.errorCheck(), this.name)
+      this.errorCheck()
+    }
+    listenToColorChange(fn, this.name)
   }
 }

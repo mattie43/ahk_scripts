@@ -5,7 +5,7 @@ fletchDarts() {
 
   if (isLooping) {
     debug("Stopping fletch darts..")
-    return isLooping := False
+    stopLooping()
   } else {
     debug("Starting fletch darts..")
     isLooping := True
