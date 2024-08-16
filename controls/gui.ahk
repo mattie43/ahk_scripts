@@ -6,6 +6,7 @@
 #Include ".\add_multi_scripts.ahk"
 #Include ".\debug_box.ahk"
 #Include ".\add_v2_scripts.ahk"
+#Include ".\settings.ahk"
 
 global myGui, ih := InputHook("L1"), currInputs := [], maxWidth := 320, contentWidth := 300, tabWidth := 285, tabs := ""
 
@@ -15,7 +16,13 @@ hotkeyText := "To set a hotkey, press the GUI button, and then press a button on
 
 if A_LineFile = A_ScriptFullPath && !A_IsCompiled {
 	myGui := Constructor()
-	myGui.Show("w" . maxWidth)
+  userSettings := settings.get()
+  if (userSettings) {
+    text := "x" . userSettings.guiX . " y" . userSettings.guiY . " w" . maxWidth
+    myGui.Show(text)
+  } else {
+    myGui.Show("w" . maxWidth)
+  }
 }
 
 Constructor() {
@@ -24,7 +31,17 @@ Constructor() {
   ; Define GUI
 	myGui := Gui()
 	myGui.Title := "Mattie's scripts"
-	myGui.OnEvent('Close', (*) => ExitApp())
+
+  closeApp(*) {
+    myGui.GetPos(&x, &y, &w, &h)
+    settings.set({
+      guiX: x,
+      guiY: y
+    })
+    ExitApp()
+  }
+
+	myGui.OnEvent('Close', closeApp)
 	myGui.BackColor := "E2E2E2"
   
   tabs := myGui.Add("Tab3", "h190 w" . contentWidth, ["Setup"])
@@ -40,10 +57,11 @@ Constructor() {
     addExtraTabs()
     setupButton.Opt("+Disabled")
   )
+
   ; Hotkey Text
   myGui.Add("Text", "w" . tabWidth, hotkeyText)
   ; Force Close
-  addScript("Force Close Script", ExitApp, 4)
+  addScript("Force Close Script", closeApp, 4)
 
   addExtraTabs() {
     tabs.Add(["Basic","v1", "v2", "PvP"])
