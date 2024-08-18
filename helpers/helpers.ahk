@@ -174,7 +174,7 @@ dropInventory(skip:=[]) {
       continue
     }
     rand := Random(-5, 5)
-    Click(inv.x + rand, inv.y + rand)
+    Click(inv.cx + rand, inv.cy + rand)
     randSleep(100, 130)
   }
   Send("{Shift up}")
@@ -192,8 +192,8 @@ hasVal(arr, item) {
 }
 
 clickInventory(num) {
-  x := window.inventory.slots[num].x
-  y := window.inventory.slots[num].y
+  x := window.inventory.slots[num].cx
+  y := window.inventory.slots[num].cy
   singleClick(x, y, 5)
 }
 
@@ -206,10 +206,10 @@ clickBankSlot(num) {
   singleClick(x, y, 7)
 }
 
-lastInvSlotEmpty() {
-  x := window.inventory.slots[28].x - 8
-  y := window.inventory.slots[28].y - 4
-  return ImageSearch(&_, &_, x, y, x + 20, y + 17, imgs.window.empty_inv_28)
+isInvSlotEmpty(slot) {
+  x := window.inventory.slots[slot].tlx
+  y := window.inventory.slots[slot].tly
+  return ImageSearch(&_, &_, x, y, x + 30, y + 26, imgs.window.empty_inv_slot)
 }
 
 playerInTile(color, altHeight := 0) {

@@ -154,15 +154,20 @@ setTabsCoords() {
 }
 
 setInvSlotsCoords() {
-	startingX := window.inventory.x + 56
-	startingY := window.inventory.y + 20
+	startingX := window.inventory.x + 41
+	startingY := window.inventory.y + 11
 
   colX := [startingX, startingX + 42, startingX + 84, startingX + 126]
   colY := [startingY, startingY + 36, startingY + 72, startingY + 108, startingY + 144, startingY + 180, startingY + 216]
 
   for _, y in colY {
     for _, x in colX {
-      window.inventory.slots.Push({ x: x, y: y })
+      window.inventory.slots.Push({
+        tlx: x,
+        tly: y,
+        cx: x + 15,
+        cy: y + 13
+      })
     }
   }
 }

@@ -8,6 +8,23 @@
 #Include ".\add_v2_scripts.ahk"
 #Include ".\settings.ahk"
 
+; g::{
+;   MouseGetPos(&x, &y)
+;   OutputDebug(x . ", " y)
+; }
+; w:: {
+;   MouseMove(0, -1, , "R")
+; }
+; a:: {
+;   MouseMove(-1, 0, , "R")
+; }
+; s:: {
+;   MouseMove(0, 1, , "R")
+; }
+; d:: {
+;   MouseMove(1, 0, , "R")
+; }
+
 global myGui, ih := InputHook("L1"), currInputs := [], maxWidth := 320, contentWidth := 300, tabWidth := 285, tabs := ""
 
 setupText := "Press setup to begin. Your RuneLite will automatically be pulled into focus. If you have more than one RuneLite open, it will choose the most recently active."

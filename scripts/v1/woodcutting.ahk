@@ -12,7 +12,7 @@ woodcutting() {
     if (droppingInv) {
       return
     }
-    if not lastInvSlotEmpty() {
+    if not isInvSlotEmpty(28) {
       droppingInv := True
       randSleep(100,2000)
       dropInventory([1])

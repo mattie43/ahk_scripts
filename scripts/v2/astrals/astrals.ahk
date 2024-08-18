@@ -31,7 +31,7 @@ class AstralsClass extends v2Helpers {
   }
 
   teleport() {
-    if lastInvSlotEmpty() {
+    if isInvSlotEmpty(28) {
       this.setSkip()
       clickInventory(1)
       this.setStep("in_house")

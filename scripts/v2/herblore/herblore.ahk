@@ -21,7 +21,7 @@ class HerbloreClass extends v2Helpers {
           this.incStepCount()
         }
       case 2:
-        if lastInvSlotEmpty() {
+        if isInvSlotEmpty(28) {
           this.setStep("click_bank")
         }
     }

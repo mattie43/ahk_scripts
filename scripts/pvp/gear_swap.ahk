@@ -9,19 +9,19 @@ gearSwap() {
   rand := Random(-5, 5)
 
   ; equip item one
-  MouseMove(one.x + rand, one.y + rand)
+  MouseMove(one.cx + rand, one.cy + rand)
   randSleep(a,b)
   Click()
   randSleep(a,b)
   
   ; equip item two
-  MouseMove(two.x + rand, two.y + rand)
+  MouseMove(two.cx + rand, two.cy + rand)
   randSleep(a,b)
   Click()
   randSleep(a,b)
   
   ; equip item three
-  MouseMove(three.x + rand, three.y + rand)
+  MouseMove(three.cx + rand, three.cy + rand)
   randSleep(a,b)
   Click()
   randSleep(a,b)
