@@ -27,19 +27,19 @@ class HighAlchNotedClass extends v2Helpers {
       switch this.stepCount {
         case 1: clickImageIn(this.ge_buy_button, "game")
         case 3:
-          item := item_list[this.item_list_num]
+          item := f2p_item_list[this.item_list_num]
           Send(item.name)
         case 5: Send("{Enter}")
         case 7: clickGE("quantity")
         case 9:
-          item := item_list[this.item_list_num]
+          item := f2p_item_list[this.item_list_num]
           Send("" . item.quantity)
           randSleep(90,130)
           Send("{Enter}")
         case 11: clickGE("plus_x")
         case 13:
           clickGE("confirm")
-          if (this.item_list_num >= item_list.Length) {
+          if (this.item_list_num >= f2p_item_list.Length) {
             this.item_list_num := 1
           } else {
             this.item_list_num += 1

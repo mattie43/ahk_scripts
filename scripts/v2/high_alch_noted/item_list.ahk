@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 
-item_list := [
+f2p_item_list := [
   {
     name: "rune kiteshield",
     quantity: 70
