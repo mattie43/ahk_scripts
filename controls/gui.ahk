@@ -8,9 +8,10 @@
 #Include ".\add_v2_scripts.ahk"
 #Include ".\settings.ahk"
 
-; g::{
+; f::{
+;   ; game starts ~(7, 31)
 ;   MouseGetPos(&x, &y)
-;   OutputDebug(x . ", " y)
+;   OutputDebug(x - 7 . ", " y - 31)
 ; }
 ; w:: {
 ;   MouseMove(0, -1, , "R")

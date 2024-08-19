@@ -264,6 +264,37 @@ stopLooping(name := "") {
   isLooping := False
 }
 
+/*
+* Click GE "price", "quantity", "plus_five", "plus_x", "buy_slot" (pass with num: Number), "confirm"
+*/
+clickGE(set := "confirm", num := 1) {
+  x := -1
+  y := -1
+
+  switch set {
+    case "price":
+      x := window.ge.set_price.x
+      y := window.ge.set_price.y
+    case "quantity":
+      x := window.ge.set_quantity.x
+      y := window.ge.set_quantity.y
+    case "plus_five":
+      x := window.ge.plus_five.x
+      y := window.ge.plus_five.y
+    case "plus_x":
+      x := window.ge.plus_x.x
+      y := window.ge.plus_x.y
+    case "confirm":
+      x := window.ge.confirm.x
+      y := window.ge.confirm.y
+    case "buy_slot":
+      x := window.ge.buy_item_slots[num].x
+      y := window.ge.buy_item_slots[num].y
+  }
+  
+  singleClick(x, y, 6)
+}
+
 ; Not the best implementation, but works for now.
 holdSpace() {
   Run("..\helpers\hold_space.ahk " . isLooping)

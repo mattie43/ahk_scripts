@@ -46,6 +46,33 @@ window.tick_counter := {
 	x: -1,
 	y: -1
 }
+window.ge := {
+  close: {
+    x: -1,
+    y: -1
+  },
+  set_quantity: {
+    x: -1,
+    y: -1
+  },
+  set_price: {
+    x: -1,
+    y: -1
+  },
+  plus_five: {
+    x: -1,
+    y: -1
+  },
+  plus_x: {
+    x: -1,
+    y: -1
+  },
+  confirm: {
+    x: -1,
+    y: -1
+  },
+  buy_item_slots: []
+}
 
 ; Tab setters
 window.tabs := {}
@@ -192,6 +219,65 @@ setBankCoords() {
   ]
 }
 
+setGECoords() {
+	startingX := window.game.x
+	startingY := window.game.y
+
+  ; close
+  window.ge.close.x := startingX + 481
+  window.ge.close.y := startingY + 33
+  ; set quantity
+  window.ge.set_quantity.x := startingX + 212
+  window.ge.set_quantity.y := startingY + 210
+  ; set price
+  window.ge.set_price.x := startingX + 384
+  window.ge.set_price.y := startingY + 210
+  ; set plus five
+  window.ge.plus_five.x := startingX + 425
+  window.ge.plus_five.y := startingY + 210
+  ; set plus x
+  window.ge.plus_x.x := startingX + 464
+  window.ge.plus_x.y := startingY + 210
+  ; set confirm
+  window.ge.confirm.x := startingX + 257
+  window.ge.confirm.y := startingY + 283
+  ; buy slots
+  window.ge.buy_item_slots := [
+    {
+      x: startingX + 54,
+      y: startingY + 144
+    },
+    {
+      x: startingX + 171,
+      y: startingY + 144
+    },
+    {
+      x: startingX + 288,
+      y: startingY + 144
+    },
+    {
+      x: startingX + 405,
+      y: startingY + 144
+    },
+    {
+      x: startingX + 54,
+      y: startingY + 264
+    },
+    {
+      x: startingX + 171,
+      y: startingY + 264
+    },
+    {
+      x: startingX + 288,
+      y: startingY + 264
+    },
+    {
+      x: startingX + 405,
+      y: startingY + 264
+    },
+  ]
+}
+
 setPlayerCoords() {
 	startingX := window.game.x
 	startingY := window.game.y
@@ -212,4 +298,5 @@ setup() {
   setInvSlotsCoords()
   setBankCoords()
   setPlayerCoords()
+  setGECoords()
 }
