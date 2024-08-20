@@ -3,10 +3,13 @@
 class GETrackerClass {
   base_url := "https://prices.runescape.wiki/api/v1/osrs"
   user_agent := ""
-  try {
-    user_agent := FileRead("..\helpers\ge_tracker\ge_tracker.txt")
-  } catch {
-    ; do nothing
+
+  __New() {
+    try {
+      user_agent := FileRead("..\helpers\ge_tracker\ge_tracker.txt")
+    } catch {
+      ; do nothing
+    }
   }
 
   getLatest() {
