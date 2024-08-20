@@ -2,7 +2,12 @@
 
 class GETrackerClass {
   base_url := "https://prices.runescape.wiki/api/v1/osrs"
-  user_agent := FileRead("..\helpers\ge_tracker\ge_tracker.txt")
+  user_agent := ""
+  try {
+    user_agent := FileRead("..\helpers\ge_tracker\ge_tracker.txt")
+  } catch {
+    ; do nothing
+  }
 
   getLatest() {
     resp := this.get(this.base_url . "/latest")
@@ -24,6 +29,9 @@ class GETrackerClass {
   }
 
   get(url) {
+    if (!url) OR (!this.user_agent) {
+      return
+    }
     comObj := ComObject("WinHTTP.WinHttpRequest.5.1")
     comObj.Open("GET", url, true)
     comObj.SetRequestHeader("User-Agent", this.user_agent)
