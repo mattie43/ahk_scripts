@@ -1,7 +1,7 @@
 #Requires AutoHotkey v2.0
 
 class AstralsClass extends v2Helpers {
-  name := "RC - Astrals (incomplete)"
+  name := "incomplete - Astral RC"
 	setup_img := "..\scripts\v2\astrals\setup.png"
   setup_text := "Line one.\nLine two."
   shouldDrink := False

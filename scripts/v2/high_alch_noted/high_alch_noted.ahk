@@ -3,7 +3,7 @@
 #Include ".\item_list.ahk"
 
 class HighAlchNotedClass extends v2Helpers {
-  name := "High Alch Noted Items"
+  name := "incomplete - High Alch Noted Items"
 	setup_img := "..\scripts\v2\[FOLDER_NAME]\setup.png"
   setup_text := "Line one.\nLine two."
 	noted_item := "*TransBlack ..\scripts\v2\high_alch_noted\noted_item.png"

@@ -1,7 +1,7 @@
 #Requires AutoHotkey v2.0
 
 class EnchantNecksClass extends v2Helpers {
-  name := "Enchant Necks"
+  name := "incomplete - Enchant Necks"
 	setup_img := "..\scripts\v2\[FOLDER_NAME]\setup.png"
   setup_text := "Line one.\nLine two."
 	sapphire_enchant := "*50 ..\scripts\v2\enchant_necks\sapphire_enchant.png"
