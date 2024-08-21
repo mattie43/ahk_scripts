@@ -209,7 +209,15 @@ clickBankSlot(num) {
 isInvSlotEmpty(slot) {
   x := window.inventory.slots[slot].tlx
   y := window.inventory.slots[slot].tly
+  ; (30, 26) is size of empty_inv_slot img
   return ImageSearch(&_, &_, x, y, x + 30, y + 26, imgs.window.empty_inv_slot)
+}
+
+isImgInInvSlot(img, slot) {
+  x := window.inventory.slots[slot].tlx
+  y := window.inventory.slots[slot].tly
+  ; (30, 26) is size of empty_inv_slot img
+  return ImageSearch(&_, &_, x, y, x + 30, y + 26, img)
 }
 
 playerInTile(color, altHeight := 0) {
@@ -293,6 +301,16 @@ clickGE(set := "confirm", num := 1) {
   }
   
   singleClick(x, y, 6)
+}
+
+screenshotInvSlot(num, name := "image") {
+  ; Need an additional 9 pixels to ignore padding
+  x := window.x + 9 + window.inventory.slots[num].tlx
+  y := window.y + window.inventory.slots[num].tly
+  ; (30, 26) is size of empty_inv_slot img,
+  ; let's use the same
+  str := x . ", " . y . ", " . x + 30 . ", " . y + 26
+  CaptureScreen(str, False, ".\temp\" . name . ".png")
 }
 
 ; Not the best implementation, but works for now.

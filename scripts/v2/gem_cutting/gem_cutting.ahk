@@ -1,32 +1,21 @@
 #Requires AutoHotkey v2.0
 
 class GemCuttingClass extends v2Helpers {
-  name := "Gem Cut/Stams/Glass"
+  name := "1x27 Inventories"
 	setup_img := "..\scripts\v2\gem_cutting\setup.png"
-  setup_text := "Stand next to any banker/booth marked pink (FFFF00FF).\nSet camera top down.\nSet camera point to 'Bank'.\nPut your gem/super energy(4)/glass in the first slot of any bank tab. (Only works on Sapphire through Dragonstone gems)\nSet 'Quantity: All' in bank.\nPut your chisel/crystals/pipe in slot one of your inventory.\nBegin script."
-	how_many := "*50 ..\scripts\v2\gem_cutting\how_many.png"
-	uncut_sapphire := "*20 ..\scripts\v2\gem_cutting\uncut_sapphire.png"
-	uncut_emerald := "*20 ..\scripts\v2\gem_cutting\uncut_emerald.png"
-	uncut_ruby := "*20 ..\scripts\v2\gem_cutting\uncut_ruby.png"
-	uncut_diamond := "*20 ..\scripts\v2\gem_cutting\uncut_diamond.png"
-	uncut_dragonstone := "*20 ..\scripts\v2\gem_cutting\uncut_dragonstone.png"
-	super_energy := "*20 ..\scripts\v2\gem_cutting\super_energy.png"
-	molten_glass := "*20 ..\scripts\v2\gem_cutting\molten_glass.png"
-  imgs_arr := [this.uncut_sapphire, this.uncut_emerald, this.uncut_ruby, this.uncut_diamond, this.uncut_dragonstone, this.super_energy, this.molten_glass]
+  setup_text := "Stand next to any banker/booth marked pink (FFFF00FF).\nSet camera top down.\nSet camera point to 'Bank'.\nPut your x27 item in the first slot of any bank tab.\nSet 'Quantity: All' in bank.\nPut your tool in slot one of your inventory.\nBegin script."
+	would_you_like := "*50 ..\scripts\v2\gem_cutting\would_you_like.png"
+  temp_img := ".\temp\image.png"
 
-  checkImage() {
-    for ind, img in this.imgs_arr {
-      if findImageIn(&_, &_, img, "inventory") {
-        return True
-      }
-    }
-    return False
+  takeSS() {
+    screenshotInvSlot(28)
   }
 
   cut() {
     switch (this.stepCount) {
       case 0:
-        if this.checkImage() {
+        if not isInvSlotEmpty(28) {
+          this.takeSS()
           this.incStepCount()
         }
       case 1:
@@ -35,12 +24,12 @@ class GemCuttingClass extends v2Helpers {
         clickInventory(5)
         this.incStepCount()
       case 2:
-        if findImageIn(&_, &_, this.how_many, "chat") {
+        if findImageIn(&_, &_, this.would_you_like, "chat") {
           Send("{Space}")
           this.incStepCount()
         }
       case 3:
-        if not this.checkImage() {
+        if not isImgInInvSlot(this.temp_img, 28) {
           this.setStep("click_bank")
         }
     }
