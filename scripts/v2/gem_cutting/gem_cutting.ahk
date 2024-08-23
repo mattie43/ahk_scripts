@@ -4,7 +4,7 @@ class GemCuttingClass extends v2Helpers {
   name := "1x27 Inventories"
 	setup_img := "..\scripts\v2\gem_cutting\setup.png"
   setup_text := "Stand next to any banker/booth marked pink (FFFF00FF).\nSet camera top down.\nSet camera point to 'Bank'.\nPut your x27 item in the first slot of any bank tab.\nSet 'Quantity: All' in bank.\nPut your tool in slot one of your inventory.\nBegin script."
-	would_you_like := "*50 ..\scripts\v2\gem_cutting\would_you_like.png"
+	quantity := "*50 ..\scripts\v2\gem_cutting\quantity.png"
   temp_img := ".\temp\image.png"
 
   takeSS() {
@@ -24,7 +24,7 @@ class GemCuttingClass extends v2Helpers {
         clickInventory(5)
         this.incStepCount()
       case 2:
-        if findImageIn(&_, &_, this.would_you_like, "chat") {
+        if findImageIn(&_, &_, this.quantity, "chat") {
           Send("{Space}")
           this.incStepCount()
         }

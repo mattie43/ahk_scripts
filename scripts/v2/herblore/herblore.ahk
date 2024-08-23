@@ -4,7 +4,7 @@ class HerbloreClass extends v2Helpers {
   name := "Herblore x14"
 	setup_img := "..\scripts\v2\herblore\setup.png"
   setup_text := "Stand next to any banker/booth marked pink (FFFF00FF).\nSet camera top down.\nSet camera point to 'Bank'.\nPut your unf. pot and secondary ingredient in the first and second slot of any bank tab.\nSet 'Quantity: X' to 14 in bank.\nBegin script."
-	how_many := "*50 ..\scripts\v2\gem_cutting\how_many.png"
+	quantity := "*50 ..\scripts\v2\gem_cutting\quantity.png"
 
   combine() {
     switch (this.stepCount) {
@@ -16,7 +16,7 @@ class HerbloreClass extends v2Helpers {
           this.incStepCount()
         }
       case 1:
-        if findImageIn(&_, &_, this.how_many, "chat") {
+        if findImageIn(&_, &_, this.quantity, "chat") {
           Send("{Space}")
           this.incStepCount()
         }
