@@ -10,3 +10,4 @@
 #Include ".\webhook\webhook.ahk"
 #Include ".\ge_tracker\ge_tracker.ahk"
 #Include ".\capture_screen.ahk"
+#Include ".\get_location.ahk"
