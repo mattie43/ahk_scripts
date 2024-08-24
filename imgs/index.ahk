@@ -49,4 +49,6 @@ imgs.v1 := {
   molten_glass: "*TransBlack ..\imgs\v1\molten_glass.png",
   inventory_full_logs: "*50 ..\imgs\v1\inventory_full_logs.png",
   absorption_check: "*TransBlack *50 ..\imgs\v1\absorption_check.png",
+  high_alch: "*TransBlack ..\imgs\v1\high_alch.png",
+  camelot_tele: "*TransBlack *20 ..\imgs\v1\camelot_tele.png",
 }

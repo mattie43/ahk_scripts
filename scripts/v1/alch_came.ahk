@@ -4,13 +4,18 @@ alchCame() {
   tickCount := 0
 
   callback() {
+    rand := Random(3,6)
     if (tickCount == 1) {
-      clickColorIn(colors.orange, "inventory", 5)
+      if findImageIn(&x, &y, imgs.v1.high_alch, "inventory") {
+        singleClick(x + rand, y + rand)
+      }
       randSleep(50,90)
       Click()
     }
     if (tickCount == 2) {
-      clickColorIn(colors.pink, "inventory", 5)
+      if findImageIn(&x, &y, imgs.v1.camelot_tele, "inventory") {
+        singleClick(x + rand, y + rand)
+      }
     }
     if (tickCount == 5) {
       tickCount := 0

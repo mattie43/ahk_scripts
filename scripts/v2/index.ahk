@@ -7,6 +7,7 @@
 #Include ".\astrals\astrals.ahk"
 #Include ".\enchant_necks\enchant_necks.ahk"
 #Include ".\high_alch_noted\high_alch_noted.ahk"
+#Include ".\agility\agility.ahk"
 
 v2Scripts := [
   gold_ore,
@@ -14,5 +15,6 @@ v2Scripts := [
   herblore,
   astrals,
   enchant_necks,
-  high_alch_noted
+  high_alch_noted,
+  v2Agility
 ]

@@ -1,6 +1,6 @@
 #Requires AutoHotkey v2.0
 
-get_location() {
+getLocation() {
   num_path_arr := [
     "*20 ..\imgs\numbers\0.bmp",
     "*20 ..\imgs\numbers\1.bmp",

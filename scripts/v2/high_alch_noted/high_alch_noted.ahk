@@ -11,7 +11,7 @@ class HighAlchNotedClass extends v2Helpers {
 	ge_collect := "*50 ..\scripts\v2\high_alch_noted\ge_collect.png"
 	ge_buy_button := "*50 ..\scripts\v2\high_alch_noted\ge_buy_button.png"
 	ge_listing_sold := "*20 ..\scripts\v2\high_alch_noted\ge_listing_sold.png"
-  item_list_num := 2
+  item_list_num := 3
 
   collect() {
     if findImageIn(&_, &_, this.ge_listing_sold, "game") {

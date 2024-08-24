@@ -1,6 +1,5 @@
 #Requires AutoHotkey v2.0
 
-#Include ".\agility\agility.ahk"
 #Include ".\cooking.ahk"
 #Include ".\mahog_tables.ahk"
 #Include ".\nmz_prayer.ahk"
@@ -67,11 +66,6 @@ v1Scripts := [
     name: "Stall Stealer",
     fn: (*) => stallStealer(),
     desc: 'Set your camera top down and use the camera point plugin "Cooking/Stalls". Works on any stall. If the stall is not already marked, just object mark it pink (FFFF00FF). Then begin this script.'
-  },
-  {
-    name: "Agility Rooftops",
-    fn: (*) => agility(),
-    desc: '*Incomplete* Only working in Draynor Village atm, does not pick up marks. Set camera top down, camera point pluigin "Agility". Begin at ending blue square.'
   },
   {
     name: "Smithing - Gold Ore",
