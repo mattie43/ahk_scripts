@@ -6,24 +6,24 @@ class SettingsClass {
   get() {
     try {
       fileText := FileRead(this.settings)
+
+      splitLines := StrSplit(fileText, "`n")
+      newMap := Map()
+    
+      for _, item in splitLines {
+        if (!item) {
+          ; skip empty items (should only be last empty space)
+          continue
+        }
+        kv := StrSplit(item, "=")
+        newMap.%kv[1]% := kv[2]
+      }
+
+      return newMap
     } catch {
       ; return "null" if file doesn't exist
       return ""
     }
-
-    splitLines := StrSplit(fileText, "`n")
-    newMap := Map()
-  
-    for _, item in splitLines {
-      if (!item) {
-        ; skip empty items (should only be last empty space)
-        continue
-      }
-      kv := StrSplit(item, "=")
-      newMap.%kv[1]% := kv[2]
-    }
-
-    return newMap
   }
 
   set(obj) {

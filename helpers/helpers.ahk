@@ -84,9 +84,9 @@ clickColorIn(color, section, rand := 0) {
   }
 }
 
-clickImageIn(image, section, width := 0, height := 0, rand := 0) {
+clickImageIn(image, section, x_offset_center := 0, y_offset_center := 0, rand := 0) {
   if findImageIn(&x, &y, image, section) {
-    singleClick(x + width, y + height, rand)
+    singleClick(x + x_offset_center, y + y_offset_center, rand)
     return True
   } else {
     return False
@@ -98,14 +98,17 @@ depositAll() {
 }
 
 singleClick(x := -1, y:= -1, rand := 0) {
+  rand_x := 0
+  rand_y := 0
   if (x < 1 OR y < 1) {
     return
   }
   if (rand > 0) {
-    rand := Random(rand * -1, rand)
+    rand_x := Random(rand * -1, rand)
+    rand_y := Random(rand * -1, rand)
   }
   if (x AND y) {
-    MouseMove(x + rand, y + rand)
+    MouseMove(x + rand_x, y + rand_y)
   }
   randSleep(90, 130)
   Click()
