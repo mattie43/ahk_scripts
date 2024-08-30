@@ -313,7 +313,7 @@ screenshotInvSlot(num, name := "image") {
   ; (30, 26) is size of empty_inv_slot img,
   ; let's use the same
   str := x . ", " . y . ", " . x + 30 . ", " . y + 26
-  CaptureScreen(str, False, ".\temp\" . name . ".png")
+  CaptureScreen(str, False, ".\" . name . ".png")
 }
 
 ; Not the best implementation, but works for now.
