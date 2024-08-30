@@ -5,6 +5,7 @@ class v2Helpers {
   stepCount := 0
   tickCount := 0
   errorCount := 0
+  dcTimer := ""
 
   skip() {
     return
@@ -44,13 +45,14 @@ class v2Helpers {
   checkDC() {
     if amIDisconnected() {
       SendMsgToDiscord("You have disconnected!")
+      SetTimer(this.dcTimer, 0)
       return stopLooping()
     }
   }
 
   run() {
     this.setStep("start")
-    SetTimer(() => this.checkDC(), 60000)
+    this.dcTimer := SetTimer(() => this.checkDC(), 60000)
     fn() {
       this.%this.step%()
       this.errorCheck()
