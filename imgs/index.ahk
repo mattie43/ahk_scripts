@@ -12,7 +12,7 @@ imgs.window := {
   bank_close_btn: "*50 ..\imgs\window\bank_close_btn.png",
   empty_inv_slot: "*20 ..\imgs\window\empty_inv_slot.png",
   disconnected: "*TransBlack ..\imgs\window\disconnected.png",
-  welcome_screen: "*TransBlack ..\imgs\window\welcome_screen.png",
+  welcome_screen: "*50 ..\imgs\window\welcome_screen.png",
 }
 
 /*
