@@ -44,6 +44,7 @@ class v2Helpers {
   checkDC() {
     if amIDisconnected() {
       SendMsgToDiscord("You have disconnected!")
+      return stopLooping()
     }
   }
 
