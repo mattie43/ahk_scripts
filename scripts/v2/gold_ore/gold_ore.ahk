@@ -2,10 +2,10 @@
 
 class GoldOreClass extends v2Helpers {
   name := "Smithing - Gold Ore"
-	setup_img := "..\scripts\v2\smithing_gold_ore\setup.png"
+	setup_img := "..\scripts\v2\gold_ore\setup.png"
   setup_text := "Set your camera top down.\nSelect the 'Smithing' camera point.\nStand in front of the bank.\nMake sure 'Quantity: All' is selected in the bank.\nBegin script."
-  gold_ore := "*TransBlack ..\scripts\v2\smithing_gold_ore\gold_ore.png"
-  smithing_select := "*50 ..\scripts\v2\smithing_gold_ore\smithing_select.png"
+  gold_ore := "*TransBlack ..\scripts\v2\gold_ore\gold_ore.png"
+  smithing_select := "*50 ..\scripts\v2\gold_ore\smithing_select.png"
 
   smith() {
     ; click furnace

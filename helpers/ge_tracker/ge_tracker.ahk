@@ -1,6 +1,7 @@
 #Requires AutoHotkey v2.0
 
 class GETrackerClass {
+  ; Provided by https://oldschool.runescape.wiki/w/RuneScape:Real-time_Prices
   base_url := "https://prices.runescape.wiki/api/v1/osrs"
   user_agent := ""
 
