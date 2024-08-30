@@ -41,8 +41,15 @@ class v2Helpers {
     return stopLooping()
   }
 
+  checkDC() {
+    if amIDisconnected() {
+      SendMsgToDiscord("You have disconnected!")
+    }
+  }
+
   run() {
     this.setStep("start")
+    SetTimer(this.checkDC, 60000)
     fn() {
       this.%this.step%()
       this.errorCheck()
