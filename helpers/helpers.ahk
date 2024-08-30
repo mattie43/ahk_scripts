@@ -246,7 +246,7 @@ amIDisconnected() {
     y: window.y + window.h
   }
 
-  return ImageSearch(&_, &_, tl.x, tl.y, br.x, br.y, imgs.window.disconnected)
+  return ImageSearch(&_, &_, tl.x, tl.y, br.x, br.y, imgs.window.disconnected) OR ImageSearch(&_, &_, tl.x, tl.y, br.x, br.y, imgs.window.welcome_screen)
 }
 
 logout(name := "") {
