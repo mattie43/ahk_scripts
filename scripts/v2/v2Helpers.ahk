@@ -49,7 +49,7 @@ class v2Helpers {
 
   run() {
     this.setStep("start")
-    SetTimer(this.checkDC, 60000)
+    SetTimer(() => this.checkDC(), 60000)
     fn() {
       this.%this.step%()
       this.errorCheck()
