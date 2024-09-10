@@ -74,6 +74,8 @@ class WCFletchClass extends v2Helpers {
     }
 
     start() {
+        this.color_x := -1
+        this.color_y := -1
         this.setStep("check_inv")
     }
 }
